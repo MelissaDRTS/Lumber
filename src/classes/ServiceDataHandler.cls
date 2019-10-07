@@ -26,6 +26,11 @@ public without sharing class ServiceDataHandler {
 
 
     private List<Service_Request__c> getServiceRequests(Datetime startDatetime, Datetime endDatetime) {
+
+        Datetime dtStart = startDatetime.addHours(4);
+        Datetime dtEnd = endDatetime.addHours(4);
+
+
         return [
                 SELECT
                         Id,
@@ -38,9 +43,9 @@ public without sharing class ServiceDataHandler {
                 FROM
                         Service_Request__c
                 WHERE
-                SystemModstamp >= :startDateTime
+                SystemModstamp >= :dtStart
                 AND
-                SystemModstamp <= :endDateTime
+                SystemModstamp <= :dtEnd
         ];
 
     }
