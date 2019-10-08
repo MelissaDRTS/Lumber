@@ -27,10 +27,14 @@ public with sharing class DocumentServiceHandler {
      * @return
      */
     private List<ContentVersion> getContentVersions(Datetime startTime, Datetime endTime) {
+        Datetime tzStarTime = startTime.addHours(4);
+        Datetime tzEndTime = endTime.addHours(4);
+
+
         return [
                 SELECT Id, Title, FileType, VersionData
                 FROM ContentVersion
-                WHERE LastModifiedDate >= :startTime AND LastModifiedDate <= :endTime
+                WHERE LastModifiedDate >= :tzStarTime AND LastModifiedDate <= :tzEndTime
         ];
     }
 

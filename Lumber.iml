@@ -133,11 +133,11 @@
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
-                            <option name="name" value="RTS_Portal_ManageUsersView_Ctlr" />
+                            <option name="name" value="RTS_Portal_ManageUsers_Ctlr" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
-                            <option name="name" value="RTS_Portal_ManageUsers_Ctlr" />
+                            <option name="name" value="RTS_Portal_ManageUsersView_Ctlr" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
@@ -198,6 +198,10 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="StoreDataTest" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="testStringClass" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
