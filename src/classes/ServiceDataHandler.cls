@@ -61,6 +61,8 @@ public without sharing class ServiceDataHandler {
                 response.installationScheduled = sr.Installation_Completed__c;
                 response.estimationCompleted = sr.Estimated_Completion__c;
                 response.installationCompleted = sr.Installation_Completed__c;
+                //response.lastModDatetime = sr.SystemModstamp;
+
 
                 results.add(response);
             } catch (Exception e) {

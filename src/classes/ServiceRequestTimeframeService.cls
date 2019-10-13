@@ -14,6 +14,7 @@ global without sharing class ServiceRequestTimeframeService {
         webservice Date installationScheduled;
         webservice Date estimationCompleted;
         webservice Date installationCompleted;
+
     }
 
     global class ServiceRequestResponse {
