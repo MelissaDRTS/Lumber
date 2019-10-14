@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd090f78-13d3-4edc-b2b4-c578d73dcbf8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/classes/ArchivedDocumentServiceHandler.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/ArchivedDocumentServiceHandler.cls-meta.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ServiceDataHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ServiceDataHandler.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ServiceRequestTimeframeService.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ServiceRequestTimeframeService.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/staticresources/dataforpdf.resource" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/staticresources/dataforpdf.resource-meta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lumber.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lumber.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/DocumentService.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/DocumentService.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/DocumentServiceHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/DocumentServiceHandler.cls" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +32,7 @@
         <entry key="Lumber">
           <value>
             <ModuleWorkspaceSettings>
-              <option name="moduleContentsLastModified" value="1570494087865" />
+              <option name="moduleContentsLastModified" value="1570991651354" />
             </ModuleWorkspaceSettings>
           </value>
         </entry>
@@ -42,7 +43,8 @@
         <option name="anonymousApexSettings">
           <AnonymousApexSettings>
             <option name="apexLogLevel" value="FINEST" />
-            <option name="documentText" value="&#10;&#10;&#10;Attachment pdfAttachment = new Attachment();&#10;pdfAttachment.parentId = 'a0022000001avITAAY';&#10;pdfAttachment.Name = 'Test PDF';&#10;pdfAttachment.Body = blob.toPdf(testStringClass.data());&#10;System.debug(pdfAttachment.id);&#10;&#10;insert pdfAttachment;" />
+            <option name="documentText" value="&#10;&#10;DocumentServiceHandler handler =  new DocumentServiceHandler();&#10;&#10;handler.handleGetDocuments(2019-10-03T11:29:46.000Z, 2019-10-10T23:57:32.000Z);&#10;" />
+            <option name="splitterProportion" value="0.48788068" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionWorkspaceSettings">
@@ -52,7 +54,8 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:DOCUMENTSERVICEHANDLER" value="1570482000849" />
+                      <entry key="APEXCLASS:DOCUMENTSERVICE" value="1571054386767" />
+                      <entry key="APEXCLASS:DOCUMENTSERVICEHANDLER" value="1571054349021" />
                       <entry key="APEXCLASS:SERVICEDATAHANDLER" value="1570649349131" />
                       <entry key="APEXCLASS:SERVICEREQUESTTIMEFRAMESERVICE" value="1570649349131" />
                       <entry key="APEXCLASS:TESTSTRINGCLASS" value="1570494188096" />
@@ -66,7 +69,7 @@
         </option>
         <option name="soqlQuerySettings">
           <SoqlQuerySettings>
-            <option name="documentText" value="" />
+            <option name="documentText" value="Select Id, ContentDocumentId, title, VersionData FROM ContentVersion Where ContentDocumentId = '06922000000N7fWAAS'" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -109,6 +112,7 @@
       <workItem from="1570645170155" duration="355000" />
       <workItem from="1570649320417" duration="162000" />
       <workItem from="1570933127120" duration="680000" />
+      <workItem from="1570979602567" duration="17266000" />
     </task>
     <servers />
   </component>

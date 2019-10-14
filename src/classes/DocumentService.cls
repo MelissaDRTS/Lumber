@@ -2,6 +2,8 @@
  * @author Andrew McGuiness - andrew.mcguiness@rtslabs.com
  * @date  9/10/2019
  * @description
+ *
+ * Edit
  */
 
 global without sharing class DocumentService {
@@ -10,16 +12,29 @@ global without sharing class DocumentService {
         webService Datetime endTime;
     }
 
-    global class WorkDocument {
+    global class WorkDocumentData {
         webservice String serviceRequestId;
-        webservice String name;
-        webservice String documentType;
-        webService String fileType;
+        webService String fileName;
         webservice Blob data;
+        webservice List<String> errors;
 
     }
 
-    webservice static List<WorkDocument> getNewServiceDocuments(WorkDocumentTimeFrame timeFrame) {
-        return new DocumentServiceHandler().handleGetDocuments(timeFrame.startTime, timeFrame.endTime);
+    global class  DocumentServiceResponse {
+        webservice Integer workDocumentsCount;
+        webservice List<WorkDocumentData> workDocumentsData;
+        webservice List<String> errors;
+    }
+
+    webservice static DocumentServiceResponse getNewServiceDocuments(WorkDocumentTimeFrame timeFrame) {
+       DocumentServiceHandler handler =  new DocumentServiceHandler();
+
+        DocumentServiceResponse dsr = new DocumentServiceResponse();
+
+        dsr.errors = new List<String>();
+        dsr.workDocumentsData = handler.handleGetDocuments(timeFrame, dsr.errors);
+        dsr.workDocumentsCount = dsr.workDocumentsData.size();
+
+        return dsr;
     }
 }
