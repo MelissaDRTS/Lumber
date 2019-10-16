@@ -16,7 +16,6 @@ global without sharing class DocumentService {
         webservice String serviceRequestId;
         webService String fileName;
         webservice Blob data;
-        webservice List<String> errors;
 
     }
 

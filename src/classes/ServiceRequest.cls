@@ -71,6 +71,7 @@ global without sharing class ServiceRequest {
         webservice String State;            // Mandatory
         webservice String Country;          // Mandatory
         webservice String ZipCode;          // Mandatory
+        webService String Email;
 
         webservice String Phone;
 
@@ -97,6 +98,7 @@ global without sharing class ServiceRequest {
         webservice String OrderNumber;      // Mandatory
         webservice Date OrderDate;        // Mandatory
         webservice String OrderType;        // Mandatory
+        webService Decimal EstimatedIPPayout;
 
         public Boolean isValid() {
             return !String.isBlank(OrderNumber) &&

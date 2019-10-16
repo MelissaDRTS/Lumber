@@ -277,6 +277,7 @@ public with sharing class ServiceRequestHandler {
             customer.MailingCountry = customerInfo.Country;
             customer.MailingPostalCode = customerInfo.ZipCode;
             customer.Phone = customerInfo.Phone;
+            customer.Email = customerInfo.Email;
 
             // Handle parse the name (Assume that the name is coming as a single field, splits it based on white space)
             List<String> names = customerInfo.CustomerName.split('\\s+');
@@ -327,6 +328,7 @@ public with sharing class ServiceRequestHandler {
                 orderInfo.OrderDate__c = srSalesOrderInfo.OrderDate;
                 orderInfo.OrderType__c = srSalesOrderInfo.OrderType;
                 orderInfo.Service_Request__c = serviceRequest.Id;
+                orderInfo.EstimatedIPPayout__c = srSalesOrderInfo.EstimatedIPPayout;
 
                 if (srSalesOrderInfo.OrderType.containsIgnoreCase('install')) {
                     orderInfo.RecordTypeId = installOrderRecordId;
