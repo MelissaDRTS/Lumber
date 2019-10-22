@@ -29,10 +29,6 @@
                       <option name="entries">
                         <list>
                           <MetadataEntry>
-                            <option name="name" value="ArchivedDocumentServiceHandler" />
-                            <option name="selected" value="true" />
-                          </MetadataEntry>
-                          <MetadataEntry>
                             <option name="name" value="ChangePasswordController" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
@@ -85,6 +81,10 @@
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="DownloadPDF" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="ForgotPasswordController" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
@@ -129,6 +129,9 @@
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="RTS_MasterSalesOrderTrigger_Test" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="RTS_Portal_AllTasks" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
@@ -137,12 +140,24 @@
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
-                            <option name="name" value="RTS_Portal_ManageUsers_Ctlr" />
-                            <option name="selected" value="true" />
+                            <option name="name" value="RTS_Portal_FileDownload_Ctlr" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="RTS_Portal_FileDownload_Test" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="RTS_Portal_ManageUsersView_Ctlr" />
                             <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="RTS_Portal_ManageUsersView_Test" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="RTS_Portal_ManageUsers_Ctlr" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="RTS_Portal_ManageUsers_Test" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="RTS_Portal_SalesOrderFileUpload" />
@@ -151,6 +166,9 @@
                           <MetadataEntry>
                             <option name="name" value="RTS_Portal_SalesOrderFileUpload_Test" />
                             <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="RTS_Portal_ServiceRequestTrigger_Test" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="ServiceDataHandler" />
@@ -205,10 +223,6 @@
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
-                            <option name="name" value="testStringClass" />
-                            <option name="selected" value="true" />
-                          </MetadataEntry>
-                          <MetadataEntry>
                             <option name="name" value="VendorDataHandler" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
@@ -220,9 +234,14 @@
                             <option name="name" value="VendorDataTest" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="testStringClass" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
                         </list>
                       </option>
                       <option name="name" value="ApexClass" />
+                      <option name="wildcard" value="false" />
                     </MetadataType>
                     <MetadataType>
                       <option name="entries">
@@ -350,10 +369,6 @@
                       <option name="entries">
                         <list>
                           <MetadataEntry>
-                            <option name="name" value="RTS_MasterEventTrigger" />
-                            <option name="selected" value="true" />
-                          </MetadataEntry>
-                          <MetadataEntry>
                             <option name="name" value="RTS_MasterSalesOrder_Trigger" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
@@ -435,6 +450,9 @@
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="RTS_Portal_LiveLinkButton_Cmp" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="RTS_Portal_ManageUsers_Cmp" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
@@ -473,6 +491,7 @@
                         </list>
                       </option>
                       <option name="name" value="AuraDefinitionBundle" />
+                      <option name="wildcard" value="false" />
                     </MetadataType>
                     <MetadataType>
                       <option name="name" value="AuthProvider" />
@@ -602,6 +621,9 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Service_Request__c.Community_Compact_Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Store__c.Store_Compact_Layout" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Task.Portal_Compact_Layout" />
@@ -821,6 +843,9 @@
                             <option name="name" value="Sales_Order__c.EstimatedCompletion__c" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="Sales_Order__c.EstimatedIPPayout__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="Sales_Order__c.InstallationCompleted__c" />
                           </MetadataEntry>
                           <MetadataEntry>
@@ -881,6 +906,9 @@
                             <option name="name" value="Sales_Order__c.SalesOrderNumber__c" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="Sales_Order__c.Service_Request_Num__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="Sales_Order__c.Service_Request__c" />
                           </MetadataEntry>
                           <MetadataEntry>
@@ -936,6 +964,9 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Service_Request__c.CreationDate__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Service_Request__c.Customer_Email__c" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Service_Request__c.Customer_Name__c" />
@@ -2429,6 +2460,10 @@
                       <option name="wildcard" value="false" />
                     </MetadataType>
                     <MetadataType>
+                      <option name="name" value="LightningOnboardingConfig" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
                       <option name="entries">
                         <list>
                           <MetadataEntry>
@@ -2698,6 +2733,10 @@
                       <option name="wildcard" value="false" />
                     </MetadataType>
                     <MetadataType>
+                      <option name="name" value="ManagedContentType" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
                       <option name="name" value="ManagedTopic" />
                       <option name="wildcard" value="false" />
                     </MetadataType>
@@ -2788,6 +2827,17 @@
                       <option name="entries">
                         <list>
                           <MetadataEntry>
+                            <option name="name" value="Default_Navigation" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="NavigationMenu" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
                             <option name="name" value="Test Portal" />
                           </MetadataEntry>
                         </list>
@@ -2854,6 +2904,10 @@
                     </MetadataType>
                     <MetadataType>
                       <option name="name" value="PlatformEventChannel" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="PlatformEventChannelMember" />
                       <option name="wildcard" value="false" />
                     </MetadataType>
                     <MetadataType>
@@ -3642,16 +3696,25 @@
                       <option name="entries">
                         <list>
                           <MetadataEntry>
+                            <option name="name" value="AMERICANFLOORINGEXPERTSCustomerUser" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="FakeStoreCustomerUser" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Lumber_User" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="RichmondVA1013CustomerUser" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="TestVendor1CustomerUser" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="TestVendor2CustomerUser" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="WATSONINSTALLATIONSCustomerUser" />
                           </MetadataEntry>
                         </list>
                       </option>
@@ -3673,6 +3736,9 @@
                             <option name="name" value="Account" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="Actions" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="Activities" />
                           </MetadataEntry>
                           <MetadataEntry>
@@ -3682,28 +3748,109 @@
                             <option name="name" value="Analytics" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="Apex" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AppExperience" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Archive" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Blockchain" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="Bot" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="BusinessHours" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="Campaign" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="Case" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Chatter" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ChatterEmailsMD" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Communities" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Company" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="ConnectedApp" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Content" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="Contract" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Currency" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Deployment" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="DevHub" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Discovery" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="EAC" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="EmailAdministration" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="EmailIntegration" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="EmailTemplate" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="EncryptionKey" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="EnhancedNotes" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Entitlement" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="Essentials" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="EssentialsTrialOrg" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Event" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ExternalServices" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="FileUploadAndDownloadSecurity" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="FilesConnect" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Flow" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="Forecasting" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Formula" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="GoogleApps" />
@@ -3712,7 +3859,25 @@
                             <option name="name" value="Ideas" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="Industries" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="InvocableAction" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="IsvHammer" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="Knowledge" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Language" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="LeadConfig" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="LightningExperience" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="LiveAgent" />
@@ -3727,10 +3892,16 @@
                             <option name="name" value="Mobile" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="MyDomain" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="Name" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Notifications" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ObjectLinking" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="OmniChannel" />
@@ -3748,7 +3919,25 @@
                             <option name="name" value="OrgPreference" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="Pardot" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="PardotEinstein" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="PartyDataModel" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="PathAssistant" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Picklist" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="PlatformEncryption" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Privacy" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Product" />
@@ -3757,19 +3946,55 @@
                             <option name="name" value="Quote" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="RecordPage" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="RetailExecution" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Schema" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="Search" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Security" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="Sharing" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Site" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="SocialCustomerService" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SocialProfile" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Survey" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SystemNotification" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Trailhead" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="UserEngagement" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="UserInterface" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="UserManagement" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Voice" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="WorkDotCom" />
                           </MetadataEntry>
                         </list>
                       </option>
@@ -4175,9 +4400,13 @@
                             <option name="name" value="Test_Image" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="dataforpdf" />
+                          </MetadataEntry>
                         </list>
                       </option>
                       <option name="name" value="StaticResource" />
+                      <option name="wildcard" value="false" />
                     </MetadataType>
                     <MetadataType>
                       <option name="name" value="SynonymDictionary" />

@@ -16,7 +16,7 @@ public with sharing class DocumentServiceHandler {
         Map<Id, Service_Request__c> createServiceRequestMap = getServiceRequestNumbers(createContentDocumentLinks);
         //3
 
-        Map<String, Blob> createContentVersionMap = getBase64Data(createContentDocumentLinks);
+        Map<String, documentData> createContentVersionMap = getBase64Data(createContentDocumentLinks);
 
         //4
         List<DocumentService.workDocumentData> results = new List<DocumentService.workDocumentData>();
@@ -69,19 +69,30 @@ public with sharing class DocumentServiceHandler {
 
     //3. Map<Id, Blob> ContentDocumentId, VersionData from query (Params ContentDocumentLink list)
     // Query ContentVersion for Blob
-    private Map<String, Blob> getBase64Data(List<ContentDocumentLink> contentDocumentLinks){
+
+
+
+
+
+
+    private Map<String, DocumentData> getBase64Data(List<ContentDocumentLink> contentDocumentLinks){
         Set<Id> cdlIds = new Set<Id>();
 
         for(ContentDocumentLink contentDocumentId : contentDocumentLinks){
             cdlIds.add(contentDocumentId.ContentDocumentId);
         }
 
-        Map<String, Blob> blobMap = new Map<String, Blob>();
+        Map<String, DocumentData> blobMap = new Map<String, DocumentData>();
 
-        List<ContentVersion> listOfContent = [SELECT Id, ContentDocumentId, title, VersionData FROM ContentVersion Where ContentDocumentId IN :cdlIds];
+        List<ContentVersion> listOfContent = [SELECT Id, ContentDocumentId, title, VersionData, FileType FROM ContentVersion Where ContentDocumentId IN :cdlIds];
 
         for (ContentVersion content: listOfContent){
-            blobMap.put(content.ContentDocumentId, content.VersionData);
+
+            DocumentData docData = new DocumentData();
+            docData.fileType = content.FileType;
+            docData.base64Data = content.VersionData;
+
+            blobMap.put(content.ContentDocumentId, docData);
         }
 
         return blobMap;
@@ -95,15 +106,16 @@ public with sharing class DocumentServiceHandler {
     //Blob = Map Blob.get(ContentDocumentId)
     //fileName = item.Content.title
 
-    private void getWorkDocuments(List<ContentDocumentLink> contentDocumentLinks, Map<Id, Service_Request__c> serviceRequestMap, Map<String, Blob> contentVersionMap, List<String> errorLog, List<DocumentService.workDocumentData> results){
+    private void getWorkDocuments(List<ContentDocumentLink> contentDocumentLinks, Map<Id, Service_Request__c> serviceRequestMap, Map<String, DocumentData> contentVersionMap, List<String> errorLog, List<DocumentService.workDocumentData> results){
 
         for (ContentDocumentLink contentDocumentLink : contentDocumentLinks){
             try {
                 DocumentService.WorkDocumentData response = new DocumentService.WorkDocumentData();
 
-                response.data = contentVersionMap.get(contentDocumentLink.ContentDocumentId);
+                response.data = contentVersionMap.get(contentDocumentLink.ContentDocumentId).base64Data;
                 response.serviceRequestId = serviceRequestMap.get(contentDocumentLink.LinkedEntityId).ServiceRequestNumber__c;
                 response.fileName = contentDocumentLink.ContentDocument.title;
+                response.fileType = contentVersionMap.get(contentDocumentLink.ContentDocumentId).fileType;
 
                 results.add(response);
 
@@ -115,7 +127,10 @@ public with sharing class DocumentServiceHandler {
 
     }
 
-
+    private class DocumentData {
+        String fileType;
+        Blob base64Data;
+                }
 
 
 

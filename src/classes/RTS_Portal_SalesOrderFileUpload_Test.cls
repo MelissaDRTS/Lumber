@@ -43,18 +43,32 @@ public class RTS_Portal_SalesOrderFileUpload_Test {
         insert testSR;
         
         Sales_Order__c testInstallOrder = new Sales_Order__c(
-            RecordTypeId = '012220000004ba2AAA',
+            RecordTypeId = [SELECT Id FROM RecordType WHERE DeveloperName = 'Install_Order' LIMIT 1].Id,
             Service_Request__c = testSR.Id,
             Subcontractor__c = testContact.Id
         );
         
         insert testInstallOrder;
         
+        ContentVersion testFile = new ContentVersion(
+            Title = 'Test Doc',
+            PathOnClient = 'testDoc23.pdf',
+            VersionData = Blob.valueOf('Test Content'),
+            IsMajorVersion = true
+        );
+        
+        insert testFile;
+        
         
         
     }
     
-    public static Sales_Order__c getSalesOrder() {
+    private static ContentDocument getDocument() {
+        ContentDocument doc = [SELECT Id FROM ContentDocument LIMIT 1];
+        return doc;
+    }
+    
+    private static Sales_Order__c getSalesOrder() {
         Sales_Order__c soId = [SELECT Id, Service_Request__c FROM Sales_Order__c LIMIT 1];
         return soId;
     }
@@ -165,7 +179,7 @@ public class RTS_Portal_SalesOrderFileUpload_Test {
                                 Moisture_Reading__c, Installation_Change_Order__c, Project_Assessment_Form__c, Work_Order__c 
                                 FROM Sales_Order__c WHERE Id = :so.Id];
         System.assertEquals(true, newSo.Project_Assessment_Form__c);
-
+        
     }
     
     @isTest public static void updateAllCheckbox_test() {
@@ -178,6 +192,24 @@ public class RTS_Portal_SalesOrderFileUpload_Test {
                                 FROM Sales_Order__c WHERE Id = :so.Id];
         System.assertEquals(true, newSo.Work_Order__c);
         System.assertEquals(true, newSo.Installation_Change_Order__c);
+    }
+    
+    private static RTS_Portal_SalesOrderFileUpload.FileObject newFileObj() {
+        ContentDocument doc = [SELECT Id, Title FROM ContentDocument LIMIT 1];
+        RTS_Portal_SalesOrderFileUpload.FileObject fileObj = new RTS_Portal_SalesOrderFileUpload.FileObject();
+        fileObj.fileType = 'IPProjectAssessmentForm';
+        fileObj.newFileName = 'NewFileName';
+        fileObj.documentId = doc.Id;
+        return fileObj;
+    }
+    
+    @isTest public static void renameFile_test() {
+        RTS_Portal_SalesOrderFileUpload.FileObject testDoc = newFileObj();
+        String newFileString = JSON.serialize(testDoc);
+        RTS_Portal_SalesOrderFileUpload.renameFile(newFileString);
+        List<ContentDocument> doc = [SELECT Id, Title FROM ContentDocument WHERE Title = 'NewFileName'];
+        System.assertEquals(1, doc.size());
+        
     }
     
 }

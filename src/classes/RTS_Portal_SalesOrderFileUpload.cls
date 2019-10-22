@@ -46,8 +46,12 @@ public class RTS_Portal_SalesOrderFileUpload {
     
     @AuraEnabled
     public static Boolean updateSalesOrderFileCheckboxes(String fileType, Id salesOrderId) {
-        Sales_Order__c so = [SELECT Id, Service_Request__c, Customer_Completion_Form__c, Installation_Change_Authorization__c, Installation_Change_Order__c, Lien_Waiver__c, Moisture_Reading__c, Project_Assessment_Form__c, Work_Order__c FROM Sales_Order__c WHERE Id = :salesOrderId LIMIT 1];
+        Service_Request__c sr;
+        Sales_Order__c so = [SELECT Id, MeasurementsReceived__c, Service_Request__c, Customer_Completion_Form__c, Installation_Change_Authorization__c, Installation_Change_Order__c, Lien_Waiver__c, Moisture_Reading__c, Project_Assessment_Form__c, Work_Order__c FROM Sales_Order__c WHERE Id = :salesOrderId LIMIT 1];
         if (fileType == 'IPProjectAssessmentForm') {
+            sr = [SELECT Id, MeasurementsReceived__c FROM Service_Request__c WHERE Id = :so.Service_Request__c LIMIT 1];
+            sr.MeasurementsReceived__c = Date.today();
+            so.MeasurementsReceived__c = Date.today();
             so.Project_Assessment_Form__c = true;
         } else if (fileType == 'CustomerCompletionForm') {
             so.Customer_Completion_Form__c = true;
@@ -78,6 +82,7 @@ public class RTS_Portal_SalesOrderFileUpload {
             so.Work_Order__c = true;
         }
         try {
+            update sr;
             update so;
             return true;
         } catch (Exception e) {

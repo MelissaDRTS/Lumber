@@ -357,14 +357,20 @@ public without sharing class RTS_Portal_ManageUsers_Ctlr {
         Boolean isAdmin = hasSecondaryAdminPermission(u.Id);
         List<String> assignedStores = new List<String>();
         List<String> specialties = new List<String>();
-        String sp = c.Specialties__c;
-        specialties = sp.split(';');
+        if (c.Specialties__c != null) {
+            String sp = c.Specialties__c;
+            specialties = sp.split(';');
+        }
+        
         System.debug(specialties);
         System.debug(stores);
-        for(Assigned_Store__c store : stores) {
-            System.debug(store.Store__r.Name);
-            assignedStores.add(store.Store__c);
+        if(stores.size() > 0) {
+            for(Assigned_Store__c store : stores) {
+                System.debug(store.Store__r.Name);
+                assignedStores.add(store.Store__c);
+            }
         }
+        
         System.debug(assignedStores);
         UserForm userToReassign = new UserForm(u.FirstName, u.LastName, u.Email, u.Phone, isAdmin, specialties, assignedStores);
         return userToReassign;
@@ -701,7 +707,7 @@ public without sharing class RTS_Portal_ManageUsers_Ctlr {
             userToUpdate.IsActive = this.isActive;
             
             if (alreadyActive) {
-              
+                
                 if (this.isSecondaryAdmin) {
                     addPermissionSet(this.userId, SECONDARY_ADMIN_PERMISSION_SET_API_NAME);
                     removePermissionSet(this.userId, SUB_PERMISSION_SET_API_NAME);
@@ -716,7 +722,7 @@ public without sharing class RTS_Portal_ManageUsers_Ctlr {
             } else {
                 System.debug('user is not active');
                 System.debug(this.isActive);
-                    
+                
                 update userToUpdate;
                 if (this.isSecondaryAdmin) {
                     addPermissionSet(this.userId, SECONDARY_ADMIN_PERMISSION_SET_API_NAME);

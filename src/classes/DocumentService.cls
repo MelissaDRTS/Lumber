@@ -15,6 +15,7 @@ global without sharing class DocumentService {
     global class WorkDocumentData {
         webservice String serviceRequestId;
         webService String fileName;
+        webService String fileType;
         webservice Blob data;
 
     }
