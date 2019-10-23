@@ -39,6 +39,7 @@ public without sharing class ServiceDataHandler {
                         Installation_Scheduled__c,
                         Estimated_Completion__c,
                         Installation_Completed__c,
+                        MeasureRequestReceived__c,
                         SystemModStamp
                 FROM
                         Service_Request__c
@@ -61,6 +62,7 @@ public without sharing class ServiceDataHandler {
                 response.installationScheduled = sr.Installation_Completed__c;
                 response.estimationCompleted = sr.Estimated_Completion__c;
                 response.installationCompleted = sr.Installation_Completed__c;
+                response.measurementRequestReceived = sr.MeasureRequestReceived__c;
                 //response.lastModDatetime = sr.SystemModstamp;
 
 

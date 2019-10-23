@@ -22,6 +22,7 @@ global without sharing class VendorDataService {
 
         webservice String emailAddress;
         webservice String phoneNumber;
+        webService String status;
     }
 
     global class VendorDataResponse {
