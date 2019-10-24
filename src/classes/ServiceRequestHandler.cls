@@ -113,8 +113,10 @@ public with sharing class ServiceRequestHandler {
             // Link the ServiceRequest to a Vendor based on the VendorNumber
             if (!String.isBlank(header.VendorNumber)) {
                 List<Account> vendors = [SELECT Id FROM Account WHERE VendorNumber__c = :header.VendorNumber];
+                List<User> srUser = [SELECT Id FROM User WHERE Vendor_Number__c = :header.VendorNumber];
                 if (vendors.size() > 0 && vendors[0] != null) {
                     serviceRequest.Vendor__c = vendors[0].Id;
+                    serviceRequest.Community_User__c = srUser[0].Id;
                 }
             }
 
