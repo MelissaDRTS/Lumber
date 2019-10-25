@@ -2,8 +2,14 @@
     getTasks: function(component, event, helper) {
         this.sendRequest(component, 'c.getAllTasks')
         .then($A.getCallback(function(tasks) {
-            console.log(tasks);
-            component.set('v.data', tasks);
+            if(Object.keys(tasks).length == 0) {
+                component.set('v.noData', true);
+            } else {
+                console.log(tasks);
+                component.set('v.noData', false);
+                component.set('v.data', tasks);
+            }
+            
             
             
         }))

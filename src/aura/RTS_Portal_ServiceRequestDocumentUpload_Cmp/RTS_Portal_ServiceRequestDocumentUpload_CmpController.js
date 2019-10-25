@@ -17,7 +17,7 @@
         var hour = time.getHours();
         var min = time.getMinutes();
         var sec = time.getSeconds();
-        var timestamp = String(month) + String(day) + String(year) + "_" + String(hour) + String(min) + String(sec);
+        var timestamp = String(month) + String(day) + String(year) + String(hour) + String(min) + String(sec);
         var newFileName = "Signed_" + fileType + "_" + timestamp;
 
         console.log("Files uploaded : " + uploadedFiles.length);
@@ -34,7 +34,9 @@
     },
     
     handleChange: function (component, event, helper) {
+        component.set('v.disabled', false);
         var selectedOptionValue = event.getParam("value");
+        
         component.set('v.fileName', selectedOptionValue);
         
     },

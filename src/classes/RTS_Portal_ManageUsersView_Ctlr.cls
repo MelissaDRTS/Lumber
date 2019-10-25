@@ -1,3 +1,12 @@
+/*
+* Author: Alicia Chafee, RTS Labs.
+* Date: 09/2019
+* Description: This class is the controller for the RTS_Portal_ManageUsers_Cmp
+* 				
+* 
+* 
+*/
+
 public without sharing class RTS_Portal_ManageUsersView_Ctlr {
     
     @TestVisible private static String INSTALLER_ADMIN_PERMISSION_SET_API_NAME = 'Installer_Primary_Admin_Portal_Permissions';

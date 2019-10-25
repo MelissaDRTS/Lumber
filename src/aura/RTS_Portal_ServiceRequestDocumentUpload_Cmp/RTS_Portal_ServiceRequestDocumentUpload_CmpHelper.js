@@ -30,9 +30,9 @@
             var options = [];
             console.log(recordType);
             if(recordType == 'Install_Order') {
-                options = [ {"label" : "All Documents with Change Request", "value" : "All_Documents_with_CR"}, {"label" : "All Documents without Change Request", "value" : "All_Documents_without_CR"}, {"label" : "Customer Completion Form", "value" : "CustomerCompletionForm"}, {"label" : "Installation Change Authorization", "value" : "InstallChangeAuthorization"}, {"label" : "Installation Change Order", "value" : "ChangeOrderForm"}, {"label" : "Lien Waiver", "value" : "InstallationLienWaiver"}, {"label" : "Moisture Reading", "value" : "MoistureReadingForm"}, {"label" : "Work Order", "value" : "InstallationWorkOrder"}];
+                options = [ {"label" : "All Documents with Change Request", "value" : "All_Doc_WITH_CO"}, {"label" : "All Documents without Change Request", "value" : "All_Doc_WITO_CO"}, {"label" : "Customer Completion Form", "value" : "CustCompletion"}, {"label" : "Installation Change Authorization", "value" : "InstallChangeAuth"}, {"label" : "Installation Change Order", "value" : "ChangeOrder"}, {"label" : "Lien Waiver", "value" : "InstLienWaiver"}, {"label" : "Moisture Reading", "value" : "MoistureReading"}, {"label" : "Work Order", "value" : "InstWorkOrder"}];
             } else if (recordType == 'Measure_Order') {
-                options = [{"label" : "Project Assessment Form", "value" : "IPProjectAssessmentForm"}];
+                options = [{"label" : "Project Assessment Form", "value" : "IPProjectAssess"}];
             }
             component.set('v.fileOptions', options);
             help.getParentServiceRequest(component, recId)

@@ -1,3 +1,12 @@
+/*
+* Author: Alicia Chafee, RTS Labs.
+* Date: 10/2019
+* Description: This class is the controller for the RTS_Portal_ServiceRequestDocumentUpload_Cmp
+* 				
+* 
+* 
+*/
+
 public class RTS_Portal_SalesOrderFileUpload {
     
     @AuraEnabled
@@ -48,24 +57,24 @@ public class RTS_Portal_SalesOrderFileUpload {
     public static Boolean updateSalesOrderFileCheckboxes(String fileType, Id salesOrderId) {
         Service_Request__c sr;
         Sales_Order__c so = [SELECT Id, MeasurementsReceived__c, Service_Request__c, Customer_Completion_Form__c, Installation_Change_Authorization__c, Installation_Change_Order__c, Lien_Waiver__c, Moisture_Reading__c, Project_Assessment_Form__c, Work_Order__c FROM Sales_Order__c WHERE Id = :salesOrderId LIMIT 1];
-        if (fileType == 'IPProjectAssessmentForm') {
+        if (fileType == 'IPProjectAssess') {
             sr = [SELECT Id, MeasurementsReceived__c FROM Service_Request__c WHERE Id = :so.Service_Request__c LIMIT 1];
             sr.MeasurementsReceived__c = Date.today();
             so.MeasurementsReceived__c = Date.today();
             so.Project_Assessment_Form__c = true;
-        } else if (fileType == 'CustomerCompletionForm') {
+        } else if (fileType == 'CustCompletion') {
             so.Customer_Completion_Form__c = true;
-        } else if (fileType == 'InstallChangeAuthorization') {
+        } else if (fileType == 'InstChangeAuth') {
             so.Installation_Change_Authorization__c = true;
-        } else if (fileType == 'ChangeOrderForm') {
+        } else if (fileType == 'ChangeOrder') {
             so.Installation_Change_Order__c = true;
-        } else if (fileType == 'InstallationLienWaiver') {
+        } else if (fileType == 'InstLienWaiver') {
             so.Lien_Waiver__c = true;
-        } else if (fileType == 'MoistureReadingForm') {
+        } else if (fileType == 'MoistureReading') {
             so.Moisture_Reading__c = true;
-        } else if (fileType == 'InstallationWorkOrder') {
+        } else if (fileType == 'InstWorkOrder') {
             so.Work_Order__c = true;
-        } else if (fileType == 'All_Documents_with_CR') {
+        } else if (fileType == 'All_Doc_WITH_CO') {
             so.Project_Assessment_Form__c = true;
             so.Customer_Completion_Form__c = true;
             so.Installation_Change_Authorization__c = true;
@@ -73,7 +82,7 @@ public class RTS_Portal_SalesOrderFileUpload {
             so.Lien_Waiver__c = true;
             so.Moisture_Reading__c = true;
             so.Work_Order__c = true;
-        } else if (fileType == 'All_Documents_without_CR') {
+        } else if (fileType == 'All_Doc_WITO_CO') {
             so.Project_Assessment_Form__c = true;
             so.Customer_Completion_Form__c = true;
             so.Installation_Change_Authorization__c = true;

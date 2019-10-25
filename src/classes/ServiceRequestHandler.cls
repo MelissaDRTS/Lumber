@@ -113,11 +113,16 @@ public with sharing class ServiceRequestHandler {
             // Link the ServiceRequest to a Vendor based on the VendorNumber
             if (!String.isBlank(header.VendorNumber)) {
                 List<Account> vendors = [SELECT Id FROM Account WHERE VendorNumber__c = :header.VendorNumber];
-                List<User> srUser = [SELECT Id FROM User WHERE Vendor_Number__c = :header.VendorNumber];
                 if (vendors.size() > 0 && vendors[0] != null) {
                     serviceRequest.Vendor__c = vendors[0].Id;
-                    serviceRequest.Community_User__c = srUser[0].Id;
                 }
+            }
+
+            //Link the ServiceRequest to a User based on the VendorNumber
+            if(!String.isBlank(header.VendorNumber)){}
+            List<User> sUser = [SELECT Id FROM User WHERE Vendor_Number__c = :header.VendorNumber];
+            if(sUser.size() > 0 && sUser[0] !=null){
+                serviceRequest.Community_User__c = sUser[0].Id;
             }
 
             if (header.JobScheduleDate != null) {
@@ -373,6 +378,12 @@ public with sharing class ServiceRequestHandler {
             if (!salesOrdersValid(requestDetails.Sales_Order_Info, log)) {
                 requestValid = false;
             }
+//            List<User> activeUsers = [SELECT Id, Vendor_Number__c FROM User WHERE Vendor_Number__c = :requestDetails.Header.VendorNumber AND IsActive = true];
+//
+//            if (activeUsers.size() == 0){
+//                log.add('No Active User for this Vendor');
+//                requestValid = false;
+//            }
 
 
             return requestValid;

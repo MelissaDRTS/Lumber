@@ -1,7 +1,7 @@
 <aura:component controller="RTS_Portal_AllTasks" implements="forceCommunity:availableForAllPageTypes" access="global" >
     
     <aura:attribute name="data" type="Task"/>
-    
+    <aura:attribute name="noData" type="Boolean" default="false"/>
     <aura:handler name="init" value="{! this }" action="{! c.init }"/>
     
     
@@ -12,6 +12,9 @@
         </aura:set>
         
         <div class="slds-p-around_small">
+            <aura:if isTrue="{!v.noData}">
+                <p>You don't have any open tasks.</p>
+            </aura:if>
             <ul>
                 <aura:iteration items="{!v.data}" var="task">
                     <li class="task-subject"><lightning:button variant="base" label="{!task.Subject}" title="{!task.Subject}" value="{!task.Id}" onclick="{! c.handleClick }"/> </li>

@@ -855,25 +855,25 @@
                             <option name="name" value="Sales_Order__c.InstallationScheduled__c" />
                           </MetadataEntry>
                           <MetadataEntry>
-                            <option name="name" value="Sales_Order__c.InstallationSold__c" />
-                          </MetadataEntry>
-                          <MetadataEntry>
                             <option name="name" value="Sales_Order__c.Installation_Change_Authorization__c" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Sales_Order__c.Installation_Change_Order__c" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="Sales_Order__c.Installation_Sold__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="Sales_Order__c.Lien_Waiver__c" />
                           </MetadataEntry>
                           <MetadataEntry>
-                            <option name="name" value="Sales_Order__c.MeasureRequestReceived__c" />
-                          </MetadataEntry>
-                          <MetadataEntry>
-                            <option name="name" value="Sales_Order__c.MeasureRequestSent__c" />
-                          </MetadataEntry>
-                          <MetadataEntry>
                             <option name="name" value="Sales_Order__c.MeasureScheduled__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Sales_Order__c.Measure_Request_Received__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Sales_Order__c.Measure_Request_Sent__c" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Sales_Order__c.MeasurementsReceived__c" />
@@ -1113,6 +1113,18 @@
                             <option name="name" value="Store__c.Zip_Code__c" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="Token_Credential__mdt.Client_Id__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Token_Credential__mdt.Client_Secret__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Token_Credential__mdt.Endpoint__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Token_Credential__mdt.grant_type__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="User.Vendor_Number__c" />
                           </MetadataEntry>
                           <MetadataEntry>
@@ -1218,8 +1230,15 @@
                       <option name="wildcard" value="false" />
                     </MetadataType>
                     <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Token_Credential.Bearer" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
                       <option name="name" value="CustomMetadata" />
-                      <option name="wildcard" value="false" />
                     </MetadataType>
                     <MetadataType>
                       <option name="entries">
@@ -1509,6 +1528,9 @@
                             <option name="name" value="Task" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="Token_Credential__mdt" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="Topic" />
                           </MetadataEntry>
                           <MetadataEntry>
@@ -1554,6 +1576,9 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Store__c-en_US" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Token_Credential__mdt-en_US" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="cloudx_cms__SS_Carousel_Slide__c-en_US" />
@@ -2388,6 +2413,9 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Task-Task Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Token_Credential__mdt-Bearer Token Layout" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="User-User Layout" />
@@ -3229,6 +3257,13 @@
                       <option name="wildcard" value="false" />
                     </MetadataType>
                     <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Portal_Live_Document_Endpont" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
                       <option name="name" value="RemoteSiteSetting" />
                       <option name="wildcard" value="false" />
                     </MetadataType>
@@ -3699,6 +3734,12 @@
                             <option name="name" value="AMERICANFLOORINGEXPERTSCustomerUser" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="AccountGroup0001UnitTestVendorCustomerUser" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ELITEHARDWOODSLLCCustomerUser" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="FakeStoreCustomerUser" />
                           </MetadataEntry>
                           <MetadataEntry>
@@ -3711,7 +3752,16 @@
                             <option name="name" value="TestVendor1CustomerUser" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="TestVendor25CustomerUser" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="TestVendor2CustomerUser" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="TestVendor43CustomerUser" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="TestVendor44CustomerUser" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="WATSONINSTALLATIONSCustomerUser" />

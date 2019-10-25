@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd090f78-13d3-4edc-b2b4-c578d73dcbf8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/customMetadata/Token_Credential.Bearer.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lumber.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lumber.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aura/RTS_Portal_AllTasks_Cmp/RTS_Portal_AllTasks_Cmp.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/RTS_Portal_AllTasks_Cmp/RTS_Portal_AllTasks_Cmp.cmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aura/RTS_Portal_AllTasks_Cmp/RTS_Portal_AllTasks_CmpHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/RTS_Portal_AllTasks_Cmp/RTS_Portal_AllTasks_CmpHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aura/RTS_Portal_ServiceRequestDocumentUpload_Cmp/RTS_Portal_ServiceRequestDocumentUpload_Cmp.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/RTS_Portal_ServiceRequestDocumentUpload_Cmp/RTS_Portal_ServiceRequestDocumentUpload_Cmp.cmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aura/RTS_Portal_ServiceRequestDocumentUpload_Cmp/RTS_Portal_ServiceRequestDocumentUpload_CmpController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/RTS_Portal_ServiceRequestDocumentUpload_Cmp/RTS_Portal_ServiceRequestDocumentUpload_CmpController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aura/RTS_Portal_ServiceRequestDocumentUpload_Cmp/RTS_Portal_ServiceRequestDocumentUpload_CmpHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/RTS_Portal_ServiceRequestDocumentUpload_Cmp/RTS_Portal_ServiceRequestDocumentUpload_CmpHelper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/DownloadPDF.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/DownloadPDF.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/RTS_Portal_AllTasks.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/RTS_Portal_AllTasks.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/RTS_Portal_ManageUsersView_Ctlr.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/RTS_Portal_ManageUsersView_Ctlr.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/RTS_Portal_SalesOrderFileUpload.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/RTS_Portal_SalesOrderFileUpload.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/ServiceDataHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ServiceDataHandler.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/ServiceRequestHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ServiceRequestHandler.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/triggers/RTS_MasterSalesOrder_Trigger.trigger" beforeDir="false" afterPath="$PROJECT_DIR$/src/triggers/RTS_MasterSalesOrder_Trigger.trigger" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +41,8 @@
         <entry key="Lumber">
           <value>
             <ModuleWorkspaceSettings>
-              <option name="moduleContentsLastModified" value="1571752207702" />
-              <option name="serverMetadataLastPopulated" value="1571752200676" />
+              <option name="moduleContentsLastModified" value="1572020674251" />
+              <option name="serverMetadataLastPopulated" value="1572020663533" />
             </ModuleWorkspaceSettings>
           </value>
         </entry>
@@ -54,9 +66,10 @@
                     <map>
                       <entry key="APEXCLASS:DOCUMENTSERVICE" value="1571754784838" />
                       <entry key="APEXCLASS:DOCUMENTSERVICEHANDLER" value="1571754742663" />
-                      <entry key="APEXCLASS:SERVICEDATAHANDLER" value="1571758045605" />
+                      <entry key="APEXCLASS:DOWNLOADPDF" value="1572025853665" />
+                      <entry key="APEXCLASS:SERVICEDATAHANDLER" value="1572025853665" />
                       <entry key="APEXCLASS:SERVICEREQUEST" value="1571227787659" />
-                      <entry key="APEXCLASS:SERVICEREQUESTHANDLER" value="1571868773508" />
+                      <entry key="APEXCLASS:SERVICEREQUESTHANDLER" value="1572012513585" />
                       <entry key="APEXCLASS:SERVICEREQUESTTIMEFRAMESERVICE" value="1571758040896" />
                       <entry key="APEXCLASS:STOREDATAHANDLER" value="1571252265007" />
                       <entry key="APEXCLASS:STOREDATASERVICE" value="1571252262231" />
@@ -92,7 +105,7 @@
             <entry key="Lumber">
               <value>
                 <MetadataContents>
-                  <option name="lastPopulated" value="1571752207702" />
+                  <option name="lastPopulated" value="1572020674251" />
                   <option name="metadataTypes">
                     <set>
                       <MetadataType>
@@ -134,12 +147,12 @@
                             <option value="RTS_Portal_NewUser_Cmp" />
                             <option value="RTS_Portal_AllTasks_Cmp" />
                             <option value="RTS_Portal_Footer" />
-                            <option value="RTS_Portal_ServiceRequestDocumentUpload_Cmp" />
                             <option value="RTS_Portal_EditUser_Cmp" />
-                            <option value="selfRegister" />
                             <option value="RTS_Portal_ManageUsers_Cmp" />
-                            <option value="forgotPassword" />
+                            <option value="selfRegister" />
+                            <option value="RTS_Portal_ServiceRequestDocumentUpload_Cmp" />
                             <option value="loginForm" />
+                            <option value="forgotPassword" />
                             <option value="RTS_Portal_RefreshManageUsersView_CmpEvt" />
                           </set>
                         </option>
@@ -149,8 +162,8 @@
                         <option name="members">
                           <set>
                             <option value="SiteFooter" />
-                            <option value="SitePoweredBy" />
                             <option value="SiteLogin" />
+                            <option value="SitePoweredBy" />
                             <option value="SiteHeader" />
                           </set>
                         </option>
@@ -190,11 +203,16 @@
                           <set>
                             <option value="FakeStoreCustomerUser" />
                             <option value="Lumber_User" />
+                            <option value="ELITEHARDWOODSLLCCustomerUser" />
                             <option value="AMERICANFLOORINGEXPERTSCustomerUser" />
+                            <option value="TestVendor25CustomerUser" />
                             <option value="RichmondVA1013CustomerUser" />
                             <option value="TestVendor1CustomerUser" />
+                            <option value="TestVendor44CustomerUser" />
+                            <option value="TestVendor43CustomerUser" />
                             <option value="TestVendor2CustomerUser" />
                             <option value="WATSONINSTALLATIONSCustomerUser" />
+                            <option value="AccountGroup0001UnitTestVendorCustomerUser" />
                           </set>
                         </option>
                         <option name="name" value="Role" />
@@ -213,8 +231,8 @@
                             <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__video" />
                             <option value="Sales_Order__c.Sales_Order" />
                             <option value="Contact.Customer" />
-                            <option value="Sales_Order__c.Measure_Order" />
                             <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__image" />
+                            <option value="Sales_Order__c.Measure_Order" />
                             <option value="Contact.Subcontractor" />
                             <option value="Contact.Installer" />
                             <option value="Sales_Order__c.Install_Order" />
@@ -225,54 +243,12 @@
                       <MetadataType>
                         <option name="members">
                           <set>
-                            <option value="Sales_Order__c.No_Edits_after_Cancellation" />
-                          </set>
-                        </option>
-                        <option name="name" value="ValidationRule" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="Account.Account_Compact_Layout" />
-                            <option value="Lead.Leads_Custom_Compact_Layout" />
-                            <option value="Store__c.Store_Compact_Layout" />
-                            <option value="Contact.Contact_Layout" />
-                            <option value="Event.Community_Compact_Layout" />
-                            <option value="Task.Portal_Compact_Layout" />
-                            <option value="Service_Request__c.Community_Compact_Layout" />
-                            <option value="Contact.Customer_Layout" />
-                            <option value="User.User_Layout" />
-                            <option value="Opportunity.New_Awesome_Companct_Layout" />
-                          </set>
-                        </option>
-                        <option name="name" value="CompactLayout" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="Contact.GoogleSearch" />
-                            <option value="Lead.GoogleMaps" />
-                            <option value="Campaign.ViewCampaignInfluenceReport" />
-                            <option value="Contact.GoogleMaps" />
-                            <option value="Account.GoogleMaps" />
-                            <option value="Lead.GoogleNews" />
-                            <option value="Account.GoogleNews" />
-                            <option value="Lead.GoogleSearch" />
-                            <option value="Account.GoogleSearch" />
-                            <option value="Campaign.ViewAllCampaignMembers" />
-                          </set>
-                        </option>
-                        <option name="name" value="WebLink" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
                             <option value="Activity.MyTeamsActivities" />
                             <option value="Order.AllActivatedOrders" />
                             <option value="Opportunity.NewThisWeek" />
                             <option value="Case.AllOpenCases" />
-                            <option value="Case.MyCases" />
                             <option value="Order.AllDraftOrders" />
+                            <option value="Case.MyCases" />
                             <option value="User.ActiveUsers" />
                             <option value="Order.AllOrders" />
                             <option value="Activity.MyDelegatedActivities" />
@@ -290,37 +266,37 @@
                             <option value="Sales_Order__c.All" />
                             <option value="Recommendation.All_Recommendations" />
                             <option value="Pricebook2.All_Price_Books" />
-                            <option value="AccountBrand.All_Account_Brands" />
                             <option value="Contract.AllDraftContracts" />
                             <option value="Quote.mine" />
+                            <option value="AccountBrand.All_Account_Brands" />
                             <option value="Task.DelegatedTasks" />
-                            <option value="Sales_Order__c.All_Unassigned_Jobs" />
                             <option value="SocialPersona.AllSocialPersonas" />
+                            <option value="Sales_Order__c.All_Unassigned_Jobs" />
                             <option value="User.AllUsers" />
                             <option value="AuthorizationFormText.All_AuthorizationFormTexts" />
                             <option value="Task.UnscheduledTasks" />
                             <option value="Contract.MyDraftContracts" />
-                            <option value="Lead.TodaysLeads" />
                             <option value="Contact.Installer_List_View" />
+                            <option value="Lead.TodaysLeads" />
                             <option value="Task.CompletedTasks" />
                             <option value="Solution.AllUnreviewedSolutions" />
-                            <option value="Sales_Order__c.All_New_Jobs" />
                             <option value="Activity.UpcomingEvents" />
+                            <option value="Sales_Order__c.All_New_Jobs" />
                             <option value="Account.MyAccounts" />
-                            <option value="Event.TodaysAgenda" />
                             <option value="Opportunity.AllOpportunities" />
+                            <option value="Event.TodaysAgenda" />
                             <option value="Task.OpenTasks" />
                             <option value="Task.OverdueTasks" />
-                            <option value="ContactPointTypeConsent.All_ContactPointTypeConsent" />
                             <option value="Store__c.All" />
+                            <option value="ContactPointTypeConsent.All_ContactPointTypeConsent" />
                             <option value="Campaign.Org_Campaign_Hierarchy" />
-                            <option value="Opportunity.ClosingThisMonth" />
                             <option value="Account.AllAccounts" />
+                            <option value="Opportunity.ClosingThisMonth" />
                             <option value="ContactRequest.My_ContactRequests" />
                             <option value="CollaborationGroup.All_ChatterGroups" />
+                            <option value="DataUsePurpose.All_DataUsePurpose" />
                             <option value="Event.MyRecentEvents" />
                             <option value="Event.MyTeamsRecentEvents" />
-                            <option value="DataUsePurpose.All_DataUsePurpose" />
                             <option value="Asset.AllAssets" />
                             <option value="User.AdminUsers" />
                             <option value="Scorecard.AllScorecards" />
@@ -329,30 +305,30 @@
                             <option value="Opportunity.MyOpportunities" />
                             <option value="Campaign.MyActiveCampaigns" />
                             <option value="AuthorizationForm.All_AuthorizationForms" />
-                            <option value="Campaign.AllActiveCampaigns" />
                             <option value="Product2.AllProducts" />
+                            <option value="Campaign.AllActiveCampaigns" />
                             <option value="Contact.MyContacts" />
                             <option value="Activity.TodaysTasks" />
                             <option value="Sales_Order__c.All_Measure_Orders" />
                             <option value="Task.RecurringTasks" />
+                            <option value="Opportunity.Won" />
                             <option value="CampaignInfluence.CampaignInfluence" />
                             <option value="Sales_Order__c.All_Scheduled_Jobs" />
-                            <option value="Opportunity.Won" />
                             <option value="Service_Request__c.Completed_Jobs" />
                             <option value="cloudx_cms__SS_Carousel__c.cloudx_cms__All" />
                             <option value="Solution.AllReviewedSolutions" />
                             <option value="Sales_Order__c.All_Install_Orders" />
-                            <option value="Activity.MyActivities" />
-                            <option value="Contract.MyInApprovalContracts" />
                             <option value="Task.TodaysTasks" />
-                            <option value="Contract.AllInApprovalContracts" />
+                            <option value="Contract.MyInApprovalContracts" />
+                            <option value="Activity.MyActivities" />
                             <option value="Event.MyTeamsUpcomingEvents" />
+                            <option value="Contract.AllInApprovalContracts" />
                             <option value="Lead.AllOpenLeads" />
-                            <option value="Sales_Order__c.All_In_Progress_Jobs" />
                             <option value="Idea.Ideas_Last_7_Days" />
-                            <option value="DataUseLegalBasis.All_DataUseLegalBasis" />
-                            <option value="Event.MyUpcomingEvents" />
+                            <option value="Sales_Order__c.All_In_Progress_Jobs" />
                             <option value="Service_Request__c.All" />
+                            <option value="Event.MyUpcomingEvents" />
+                            <option value="DataUseLegalBasis.All_DataUseLegalBasis" />
                             <option value="Contract.AllActivatedContracts" />
                           </set>
                         </option>
@@ -364,21 +340,22 @@
                             <option value="Account-Community Portal Vendor Layout" />
                             <option value="Product2-Product Layout" />
                             <option value="Lead-Lead Layout" />
-                            <option value="Contact-Contact Layout" />
                             <option value="Contact-Contact Portal Layout" />
+                            <option value="Contact-Contact Layout" />
                             <option value="CollaborationGroup-Group Layout" />
                             <option value="AssetRelationship-Asset Relationship Layout" />
                             <option value="Macro-Macro Layout" />
                             <option value="Order-Order Layout" />
-                            <option value="ScorecardMetric-Scorecard Metric Layout" />
-                            <option value="Solution-Solution Layout" />
                             <option value="UserProvisioningRequest-User Provisioning Request Layout" />
-                            <option value="Event-Event Layout" />
+                            <option value="Solution-Solution Layout" />
+                            <option value="ScorecardMetric-Scorecard Metric Layout" />
                             <option value="Pricebook2-Price Book Layout" />
+                            <option value="Event-Event Layout" />
                             <option value="UserProvisioningLog-User Provisioning Log Layout" />
                             <option value="Event-Community Event Layout" />
                             <option value="UserProvAccount-User Provisioning Account Layout" />
                             <option value="Task-Portal Task Layout" />
+                            <option value="Token_Credential__mdt-Bearer Token Layout" />
                             <option value="Task-Task Layout" />
                             <option value="WorkBadgeDefinition-Badge Layout 192" />
                             <option value="Contact-Customer Layout" />
@@ -406,11 +383,11 @@
                             <option value="Scorecard-Scorecard Layout" />
                             <option value="Sales_Order__c-Request Order Layout" />
                             <option value="Sales_Order__c-Sales Order" />
-                            <option value="QuoteLineItem-Quote Line Item Layout" />
                             <option value="PricebookEntry-Price Book Entry Layout" />
+                            <option value="QuoteLineItem-Quote Line Item Layout" />
                             <option value="CaseClose-Close Case Layout" />
-                            <option value="Idea-Idea Layout" />
                             <option value="FeedItem-Feed Item Layout" />
+                            <option value="Idea-Idea Layout" />
                             <option value="Store__c-Store Layout" />
                             <option value="Global-Global Layout" />
                             <option value="WorkBadge-Badge Layout" />
@@ -429,18 +406,544 @@
                             <option value="CaseInteraction-Case Feed Layout" />
                             <option value="User-User Layout" />
                             <option value="Store__c-Community Portal Store Layout" />
-                            <option value="WorkBadgeDefinition-Badge Definition Layout" />
                             <option value="AuthorizationForm-Authorization Form Layout" />
+                            <option value="WorkBadgeDefinition-Badge Definition Layout" />
                             <option value="AccountBrand-Account Brand Layout" />
                             <option value="cloudx_cms__SS_Carousel_Slide__c-cloudx_cms__Image Slide Layout" />
                             <option value="IframeWhiteListUrl-Whitelisted Domain for Visualforce Inline Frames Layout" />
-                            <option value="ContentVersion-Content Version" />
                             <option value="AccountContactRelation-Account Contact Relationship Layout" />
+                            <option value="ContentVersion-Content Version" />
                             <option value="CampaignInfluenceModel-Campaign Influence Model Layout" />
                             <option value="Contact-Installer Layout" />
                           </set>
                         </option>
                         <option name="name" value="Layout" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="Token_Credential.Bearer" />
+                          </set>
+                        </option>
+                        <option name="name" value="CustomMetadata" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="standard__Sales" />
+                            <option value="standard__LightningService" />
+                            <option value="standard__ServiceConsole" />
+                            <option value="Lead_Generation" />
+                            <option value="standard__SalesforceCMS" />
+                            <option value="standard__Community" />
+                            <option value="standard__AppLauncher" />
+                            <option value="Relationship_Management" />
+                            <option value="Sales_Operations" />
+                            <option value="standard__Chatter" />
+                            <option value="standard__Platform" />
+                            <option value="Service_Requests" />
+                            <option value="standard__LightningSales" />
+                            <option value="standard__Service" />
+                            <option value="Sales_Leadership" />
+                            <option value="standard__Marketing" />
+                            <option value="standard__LightningBolt" />
+                            <option value="standard__LightningSalesConsole" />
+                          </set>
+                        </option>
+                        <option name="name" value="CustomApplication" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="Lead" />
+                            <option value="Case" />
+                          </set>
+                        </option>
+                        <option name="name" value="AssignmentRules" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="Lead" />
+                            <option value="Case" />
+                          </set>
+                        </option>
+                        <option name="name" value="AutoResponseRules" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="Case" />
+                          </set>
+                        </option>
+                        <option name="name" value="EscalationRules" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="Store__c-en_US" />
+                            <option value="Token_Credential__mdt-en_US" />
+                            <option value="Service_Request__c-en_US" />
+                            <option value="cloudx_cms__SS_Carousel__c-en_US" />
+                            <option value="Assigned_Store__c-en_US" />
+                            <option value="Sales_Order__c-en_US" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c-en_US" />
+                          </set>
+                        </option>
+                        <option name="name" value="CustomObjectTranslation" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="Dashboard Home Page Default" />
+                          </set>
+                        </option>
+                        <option name="name" value="HomePageLayout" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="StoreDataHandler" />
+                            <option value="ServiceRequestTimeframeService" />
+                            <option value="SiteRegisterControllerTest" />
+                            <option value="ForgotPasswordControllerTest" />
+                            <option value="RTS_Portal_ManageUsers_Test" />
+                            <option value="DownloadPDF" />
+                            <option value="CommunitiesSelfRegConfirmControllerTest" />
+                            <option value="ServiceRequestHandler" />
+                            <option value="MyProfilePageController" />
+                            <option value="LightningForgotPasswordControllerTest" />
+                            <option value="ChangePasswordControllerTest" />
+                            <option value="StoreDataService" />
+                            <option value="LightningLoginFormController" />
+                            <option value="CommunitiesSelfRegControllerTest" />
+                            <option value="DocumentServiceTest" />
+                            <option value="CommunitiesLoginControllerTest" />
+                            <option value="RTS_Portal_ManageUsersView_Test" />
+                            <option value="ForgotPasswordController" />
+                            <option value="LightningSelfRegisterControllerTest" />
+                            <option value="RTS_Portal_ManageUsers_Ctlr" />
+                            <option value="ServiceRequest" />
+                            <option value="LightningForgotPasswordController" />
+                            <option value="CommunitiesLandingControllerTest" />
+                            <option value="SiteRegisterController" />
+                            <option value="LightningSelfRegisterController" />
+                            <option value="RTS_MasterSalesOrderTrigger_Test" />
+                            <option value="RTS_Portal_FileDownload_Ctlr" />
+                            <option value="CommunitiesSelfRegConfirmController" />
+                            <option value="VendorDataTest" />
+                            <option value="SiteLoginControllerTest" />
+                            <option value="CommunitiesSelfRegController" />
+                            <option value="RTS_Portal_ManageUsersView_Ctlr" />
+                            <option value="ServiceRequestTimeframeTest" />
+                            <option value="LightningLoginFormControllerTest" />
+                            <option value="RTS_Portal_SalesOrderFileUpload_Test" />
+                            <option value="RTS_Portal_AllTasks" />
+                            <option value="CommunitiesLoginController" />
+                            <option value="MyProfilePageControllerTest" />
+                            <option value="CommunitiesLandingController" />
+                            <option value="ServiceDataHandler" />
+                            <option value="VendorDataHandler" />
+                            <option value="RTS_Portal_ServiceRequestTrigger_Test" />
+                            <option value="DocumentServiceHandler" />
+                            <option value="StoreDataTest" />
+                            <option value="testStringClass" />
+                            <option value="RTS_Portal_SalesOrderFileUpload" />
+                            <option value="SiteLoginController" />
+                            <option value="DocumentService" />
+                            <option value="ParsingHelper" />
+                            <option value="ServiceRequestTest" />
+                            <option value="VendorDataService" />
+                            <option value="ChangePasswordController" />
+                            <option value="RTS_Portal_FileDownload_Test" />
+                            <option value="RTS_Portal_AllTasks_Test" />
+                          </set>
+                        </option>
+                        <option name="name" value="ApexClass" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="ReadOnly" />
+                            <option value="SolutionManager" />
+                            <option value="Chatter Free User" />
+                            <option value="Lumber Standard User" />
+                            <option value="Test Portal Profile" />
+                            <option value="Standard" />
+                            <option value="MarketingProfile" />
+                            <option value="Chatter External User" />
+                            <option value="Guest License User" />
+                            <option value="Admin" />
+                            <option value="ContractManager" />
+                            <option value="Customer Community Plus User" />
+                            <option value="CPQ Integration User" />
+                            <option value="Installer Community Plus User" />
+                            <option value="Subcontractor Community Plus User" />
+                            <option value="Chatter Moderator User" />
+                          </set>
+                        </option>
+                        <option name="name" value="Profile" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="RTS_MasterSalesOrder_Trigger" />
+                            <option value="RTS_MasterServiceRequest_Trigger" />
+                          </set>
+                        </option>
+                        <option name="name" value="ApexTrigger" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="Installer_Primary_Admin_Portal_Permissions" />
+                            <option value="Installer_Secondary_Admin_Portal_Permissions" />
+                            <option value="Subcontractor_Portal_Permissions" />
+                            <option value="Sales_User" />
+                          </set>
+                        </option>
+                        <option name="name" value="PermissionSet" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="PT1_profilePasswordPolicy1487029411628" />
+                            <option value="Lumber_Standard_User_profilePasswordPolicy1565806530113" />
+                            <option value="PT2_profilePasswordPolicy1539989544652" />
+                          </set>
+                        </option>
+                        <option name="name" value="ProfilePasswordPolicy" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="PT1_profileSessionSetting1487029411398" />
+                            <option value="PT2_profileSessionSetting1539989544703" />
+                            <option value="null_profileSessionSetting1565806530212" />
+                          </set>
+                        </option>
+                        <option name="name" value="ProfileSessionSetting" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="youtube" />
+                            <option value="static_resources_self" />
+                          </set>
+                        </option>
+                        <option name="name" value="CspTrustedSite" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="Portal_Live_Document_Endpont" />
+                          </set>
+                        </option>
+                        <option name="name" value="RemoteSiteSetting" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="Sales_Order__c" />
+                            <option value="Account" />
+                            <option value="CaseContactRole" />
+                            <option value="Activity" />
+                            <option value="Image" />
+                            <option value="Document" />
+                            <option value="ScorecardMetric" />
+                            <option value="PushTopic" />
+                            <option value="Store__c" />
+                            <option value="Asset" />
+                            <option value="PromptAction" />
+                            <option value="ContactPointTypeConsent" />
+                            <option value="OrgMetricScanResult" />
+                            <option value="CampaignMember" />
+                            <option value="CollaborationGroupMember" />
+                            <option value="AccountContactRole" />
+                            <option value="StreamingChannel" />
+                            <option value="WorkBadge" />
+                            <option value="Pricebook2" />
+                            <option value="Recommendation" />
+                            <option value="PricebookEntry" />
+                            <option value="ProfileSkillUser" />
+                            <option value="Idea" />
+                            <option value="WorkThanks" />
+                            <option value="ExpressionFilter" />
+                            <option value="QuickTextUsage" />
+                            <option value="ChatterActivity" />
+                            <option value="ScorecardAssociation" />
+                            <option value="Contract" />
+                            <option value="RecordMergeHistory" />
+                            <option value="Site" />
+                            <option value="Product2" />
+                            <option value="AccountBrand" />
+                            <option value="Case" />
+                            <option value="SocialPost" />
+                            <option value="ProfileSkillEndorsement" />
+                            <option value="AuthorizationFormText" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c" />
+                            <option value="NetworkMember" />
+                            <option value="ContentVersion" />
+                            <option value="Lead" />
+                            <option value="ProfileSkill" />
+                            <option value="DuplicateRecordSet" />
+                            <option value="Solution" />
+                            <option value="ForecastingQuota" />
+                            <option value="AssetRelationship" />
+                            <option value="QuickText" />
+                            <option value="DataUseLegalBasis" />
+                            <option value="QuoteLineItem" />
+                            <option value="AuthorizationFormDataUse" />
+                            <option value="RequestsForAccessSIQ" />
+                            <option value="OrderItem" />
+                            <option value="WorkBadgeDefinition" />
+                            <option value="Event" />
+                            <option value="Task" />
+                            <option value="CollaborationGroup" />
+                            <option value="cloudx_cms__SS_Carousel__c" />
+                            <option value="AuthorizationFormConsent" />
+                            <option value="ForecastingCategoryMapping" />
+                            <option value="OpportunityLineItem" />
+                            <option value="ForecastingAdjustment" />
+                            <option value="Assigned_Store__c" />
+                            <option value="ContractContactRole" />
+                            <option value="FeedItem" />
+                            <option value="ExchangeUserMapping" />
+                            <option value="Service_Request__c" />
+                            <option value="SocialPersona" />
+                            <option value="Order" />
+                            <option value="EmailMessage" />
+                            <option value="UserProvisioningRequest" />
+                            <option value="Campaign" />
+                            <option value="AuthorizationForm" />
+                            <option value="Individual" />
+                            <option value="OrgMetricScanSummary" />
+                            <option value="MacroUsage" />
+                            <option value="PartnerRole" />
+                            <option value="OpportunityCompetitor" />
+                            <option value="DataUsePurpose" />
+                            <option value="MacroAction" />
+                            <option value="ContactRequest" />
+                            <option value="User" />
+                            <option value="Macro" />
+                            <option value="MacroInstruction" />
+                            <option value="DuplicateRecordItem" />
+                            <option value="ExpressionFilterCriteria" />
+                            <option value="CaseComment" />
+                            <option value="Opportunity" />
+                            <option value="Scorecard" />
+                            <option value="Topic" />
+                            <option value="StreamActivityAccess" />
+                            <option value="OpportunityContactRole" />
+                            <option value="Contact" />
+                            <option value="Quote" />
+                            <option value="ForecastingOwnerAdjustment" />
+                            <option value="AssistantProgress" />
+                            <option value="ForecastingTypeToCategory" />
+                            <option value="RecordAction" />
+                            <option value="AccountContactRelation" />
+                            <option value="TopicAssignment" />
+                            <option value="Token_Credential__mdt" />
+                          </set>
+                        </option>
+                        <option name="name" value="CustomObject" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="Sales_Order__c.Moisture_Reading__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Description__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Button_Label__c" />
+                            <option value="Service_Request__c.Cancellation__c" />
+                            <option value="Store__c.Email_Address__c" />
+                            <option value="Store__c.Phone__c" />
+                            <option value="Service_Request__c.Job_Accepted_by_Vendor__c" />
+                            <option value="Store__c.State__c" />
+                            <option value="Contact.Specialties__c" />
+                            <option value="Service_Request__c.InstallationPaperworkSent__c" />
+                            <option value="Service_Request__c.ShipToStreet__c" />
+                            <option value="Sales_Order__c.Service_Request_Num__c" />
+                            <option value="Service_Request__c.ServiceRequestNumber__c" />
+                            <option value="Store__c.Time_Zone__c" />
+                            <option value="Sales_Order__c.Work_Order__c" />
+                            <option value="Opportunity.ROI_Analysis_Completed__c" />
+                            <option value="Service_Request__c.Customer_Name__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Show_Video_Controls__c" />
+                            <option value="User.Vendor_Number__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Slide_Order__c" />
+                            <option value="Service_Request__c.Notes__c" />
+                            <option value="Sales_Order__c.Ship_to_City__c" />
+                            <option value="Service_Request__c.Customer__c" />
+                            <option value="Service_Request__c.ThankYouCall__c" />
+                            <option value="Account.Zip__c" />
+                            <option value="Sales_Order__c.InstallationPaperworkSent__c" />
+                            <option value="Store__c.City__c" />
+                            <option value="Assigned_Store__c.Store__c" />
+                            <option value="Service_Request__c.Installation_Scheduled__c" />
+                            <option value="AccountContactRelation.Relationship_Strength__c" />
+                            <option value="Sales_Order__c.Installation_Change_Authorization__c" />
+                            <option value="Account.Status__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Height__c" />
+                            <option value="Service_Request__c.Zip_Code__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Text_Alignment__c" />
+                            <option value="Service_Request__c.State__c" />
+                            <option value="Sales_Order__c.Cancellation__c" />
+                            <option value="Service_Request__c.JobScheduleDate__c" />
+                            <option value="Service_Request__c.Installation_Completed__c" />
+                            <option value="Service_Request__c.Post_CallMade__c" />
+                            <option value="Sales_Order__c.EstimatedCompletion__c" />
+                            <option value="Service_Request__c.City__c" />
+                            <option value="Sales_Order__c.Post_CallMade__c" />
+                            <option value="Contact.Customer_Number__c" />
+                            <option value="Sales_Order__c.Store_Phone_Number__c" />
+                            <option value="Service_Request__c.Country__c" />
+                            <option value="CaseComment.ParentOrigin" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Button_Variant__c" />
+                            <option value="Service_Request__c.Community_User__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Image_URL__c" />
+                            <option value="Sales_Order__c.Lien_Waiver__c" />
+                            <option value="Sales_Order__c.MeasurementsReceived__c" />
+                            <option value="Store__c.Fax__c" />
+                            <option value="Sales_Order__c.Customer_Completion_Form__c" />
+                            <option value="Sales_Order__c.Customer_Phone__c" />
+                            <option value="Service_Request__c.Pre_CallMade__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Title_Text_Size__c" />
+                            <option value="Sales_Order__c.ThankYouCall__c" />
+                            <option value="Contact.Badge_Number__c" />
+                            <option value="Account.EmailAddress__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Button_URL__c" />
+                            <option value="Service_Request__c.MeasurementsReceived__c" />
+                            <option value="CaseComment.CommentBody" />
+                            <option value="Service_Request__c.ShipToCountry__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Text_Height__c" />
+                            <option value="Sales_Order__c.Subcontractor__c" />
+                            <option value="Store__c.Street__c" />
+                            <option value="Service_Request__c.QuoteBuilt__c" />
+                            <option value="Assigned_Store__c.Installer_or_Sub__c" />
+                            <option value="Sales_Order__c.QuoteBuilt__c" />
+                            <option value="Service_Request__c.Vendor__c" />
+                            <option value="Contact.Status__c" />
+                            <option value="Sales_Order__c.Status__c" />
+                            <option value="Account.Country__c" />
+                            <option value="Service_Request__c.StoreZipCode__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Video_Embed_URL__c" />
+                            <option value="Service_Request__c.Customer_Number__c" />
+                            <option value="Sales_Order__c.Installation_Change_Order__c" />
+                            <option value="Store__c.Status__c" />
+                            <option value="Service_Request__c.StoreNumber__c" />
+                            <option value="Sales_Order__c.Type_of_Order__c" />
+                            <option value="Token_Credential__mdt.Client_Secret__c" />
+                            <option value="Token_Credential__mdt.Endpoint__c" />
+                            <option value="Service_Request__c.MeasureRequestSent__c" />
+                            <option value="Sales_Order__c.EstimatedIPPayout__c" />
+                            <option value="cloudx_cms__SS_Carousel__c.cloudx_cms__Name__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Title__c" />
+                            <option value="Store__c.Zip_Code__c" />
+                            <option value="cloudx_cms__SS_Carousel__c.cloudx_cms__No_of_Slides__c" />
+                            <option value="Sales_Order__c.Pre_CallMade__c" />
+                            <option value="Sales_Order__c.Store__c" />
+                            <option value="Opportunity.Loss_Reason__c" />
+                            <option value="Account.Street__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Description_Text_Color__c" />
+                            <option value="Service_Request__c.ShipToState__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Raw_MP4_Video_URL__c" />
+                            <option value="Sales_Order__c.InstallationScheduled__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Text_Overlay_Background__c" />
+                            <option value="Service_Request__c.Store__c" />
+                            <option value="Sales_Order__c.Customer_Name__c" />
+                            <option value="Service_Request__c.PGI_Invoiced__c" />
+                            <option value="Store__c.Store_Number__c" />
+                            <option value="Opportunity.Discovery_Completed__c" />
+                            <option value="Sales_Order__c.SalesOrderNumber__c" />
+                            <option value="Sales_Order__c.InstallationCompleted__c" />
+                            <option value="Service_Request__c.Measure_Scheduled__c" />
+                            <option value="Sales_Order__c.Ship_to_Country__c" />
+                            <option value="Sales_Order__c.Service_Request__c" />
+                            <option value="Service_Request__c.MeasureRequestReceived__c" />
+                            <option value="Opportunity.Budget_Confirmed__c" />
+                            <option value="Sales_Order__c.OrderType__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Loop_Video__c" />
+                            <option value="Sales_Order__c.Ship_to_Zip_Code__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Raw_OGG_Video_URL__c" />
+                            <option value="Sales_Order__c.Project_Assessment_Form__c" />
+                            <option value="Sales_Order__c.Measure_Request_Sent__c" />
+                            <option value="Sales_Order__c.MeasureScheduled__c" />
+                            <option value="Service_Request__c.Street__c" />
+                            <option value="Store__c.Division__c" />
+                            <option value="Token_Credential__mdt.grant_type__c" />
+                            <option value="Token_Credential__mdt.Client_Id__c" />
+                            <option value="Sales_Order__c.Measure_Request_Received__c" />
+                            <option value="Sales_Order__c.PGI_Invoiced__c" />
+                            <option value="Account.VendorNumber__c" />
+                            <option value="Sales_Order__c.Ship_to_State__c" />
+                            <option value="Sales_Order__c.Installation_Sold__c" />
+                            <option value="Account.State__c" />
+                            <option value="Service_Request__c.Phone__c" />
+                            <option value="Service_Request__c.Customer_Email__c" />
+                            <option value="Sales_Order__c.OrderDate__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Autoplay__c" />
+                            <option value="Sales_Order__c.Vendor__c" />
+                            <option value="Service_Request__c.CreationDate__c" />
+                            <option value="Contact.Vendor_Number__c" />
+                            <option value="Store__c.Region__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Carousel__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Title_Text_Color__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Raw_WEBM_Video_URL__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Description_Size__c" />
+                            <option value="Service_Request__c.ShipToZipCode__c" />
+                            <option value="Service_Request__c.Status__c" />
+                            <option value="Store__c.Country__c" />
+                            <option value="Account.City__c" />
+                            <option value="Sales_Order__c.Ship_to_Street__c" />
+                            <option value="Service_Request__c.InstallationSold__c" />
+                            <option value="Service_Request__c.ShipToCity__c" />
+                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Text_Position__c" />
+                            <option value="Service_Request__c.Estimated_Completion__c" />
+                          </set>
+                        </option>
+                        <option name="name" value="CustomField" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="Account.Account_Compact_Layout" />
+                            <option value="Lead.Leads_Custom_Compact_Layout" />
+                            <option value="Store__c.Store_Compact_Layout" />
+                            <option value="Contact.Contact_Layout" />
+                            <option value="Event.Community_Compact_Layout" />
+                            <option value="Task.Portal_Compact_Layout" />
+                            <option value="Service_Request__c.Community_Compact_Layout" />
+                            <option value="Contact.Customer_Layout" />
+                            <option value="User.User_Layout" />
+                            <option value="Opportunity.New_Awesome_Companct_Layout" />
+                          </set>
+                        </option>
+                        <option name="name" value="CompactLayout" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="Contact.GoogleSearch" />
+                            <option value="Lead.GoogleMaps" />
+                            <option value="Contact.GoogleMaps" />
+                            <option value="Campaign.ViewCampaignInfluenceReport" />
+                            <option value="Account.GoogleMaps" />
+                            <option value="Lead.GoogleNews" />
+                            <option value="Account.GoogleNews" />
+                            <option value="Lead.GoogleSearch" />
+                            <option value="Account.GoogleSearch" />
+                            <option value="Campaign.ViewAllCampaignMembers" />
+                          </set>
+                        </option>
+                        <option name="name" value="WebLink" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="Sales_Order__c.No_Edits_after_Cancellation" />
+                          </set>
+                        </option>
+                        <option name="name" value="ValidationRule" />
                       </MetadataType>
                       <MetadataType>
                         <option name="members">
@@ -455,11 +958,11 @@
                             <option value="Task.Defer" />
                             <option value="Task.EditDescription_6" />
                             <option value="Task.EditDescription_7" />
-                            <option value="Task.EditDescription" />
                             <option value="Task.EditDescription_2" />
+                            <option value="Task.EditDescription" />
                             <option value="Task.EditDescription_3" />
-                            <option value="FeedItem.NewTaskFromFeedItem" />
                             <option value="Task.EditDescription_4" />
+                            <option value="FeedItem.NewTaskFromFeedItem" />
                             <option value="Task.EditDescription_5" />
                             <option value="Task.EditDescription_0" />
                             <option value="Task.EditDescription_1" />
@@ -469,8 +972,8 @@
                             <option value="Task.UpdateStatus_1" />
                             <option value="Task.UpdateStatus_2" />
                             <option value="Task.UpdateStatus_3" />
-                            <option value="Case.NewChildCase" />
                             <option value="Task.UpdateStatus_4" />
+                            <option value="Case.NewChildCase" />
                             <option value="Task.UpdateStatus_5" />
                             <option value="Task.UpdateStatus_6" />
                             <option value="Task.UpdateStatus_7" />
@@ -486,14 +989,14 @@
                             <option value="Task.UpdatePriority_1" />
                             <option value="Task.UpdatePriority_4" />
                             <option value="Task.UpdatePriority_3" />
-                            <option value="Task.UpdatePriority_0" />
                             <option value="NewCommunityCase" />
+                            <option value="Task.UpdatePriority_0" />
                             <option value="Quote.SendEmail" />
                             <option value="CollaborationGroup.NewGroupMember" />
                             <option value="Task.UpdateStatus" />
                             <option value="Task.Defer_4" />
-                            <option value="Follow_Up" />
                             <option value="Task.Defer_5" />
+                            <option value="Follow_Up" />
                             <option value="Task.Defer_2" />
                             <option value="Task.Defer_3" />
                             <option value="Task.Defer_0" />
@@ -517,14 +1020,14 @@
                             <option value="Contact_Record_Page1" />
                             <option value="Sales_Operations_UtilityBar" />
                             <option value="Account_Record_Page" />
-                            <option value="Opportunity_Record_Page" />
                             <option value="Lead_Record_Page" />
+                            <option value="Opportunity_Record_Page" />
                             <option value="Sales_Leadership_UtilityBar" />
                             <option value="Service_Requests_UtilityBar" />
                             <option value="Account_Record_Page1" />
-                            <option value="Sales_UtilityBar" />
-                            <option value="Contact_Record_Page" />
                             <option value="Account_Record_Page2" />
+                            <option value="Contact_Record_Page" />
+                            <option value="Sales_UtilityBar" />
                           </set>
                         </option>
                         <option name="name" value="FlexiPage" />
@@ -594,27 +1097,12 @@
                       <MetadataType>
                         <option name="members">
                           <set>
-                            <option value="standard__Sales" />
-                            <option value="standard__LightningService" />
-                            <option value="standard__ServiceConsole" />
-                            <option value="standard__SalesforceCMS" />
-                            <option value="Lead_Generation" />
-                            <option value="standard__Community" />
-                            <option value="standard__AppLauncher" />
-                            <option value="Relationship_Management" />
-                            <option value="Sales_Operations" />
-                            <option value="standard__Chatter" />
-                            <option value="standard__Platform" />
-                            <option value="Service_Requests" />
-                            <option value="standard__Service" />
-                            <option value="standard__LightningSales" />
-                            <option value="Sales_Leadership" />
-                            <option value="standard__Marketing" />
-                            <option value="standard__LightningSalesConsole" />
-                            <option value="standard__LightningBolt" />
+                            <option value="User_Push_Notification" />
+                            <option value="Create_Scheduled_Event_From_Sales_Order" />
+                            <option value="Update_Service_Request" />
                           </set>
                         </option>
-                        <option name="name" value="CustomApplication" />
+                        <option name="name" value="Flow" />
                       </MetadataType>
                       <MetadataType>
                         <option name="members">
@@ -629,192 +1117,35 @@
                       <MetadataType>
                         <option name="members">
                           <set>
-                            <option value="User_Push_Notification" />
-                            <option value="Create_Scheduled_Event_From_Sales_Order" />
-                            <option value="Update_Service_Request" />
+                            <option value="Contact.Standard_Contact_Match_Rule_v1_1" />
+                            <option value="Account.Standard_Account_Match_Rule_v1_0" />
+                            <option value="Lead.Standard_Lead_Match_Rule_v1_0" />
                           </set>
                         </option>
-                        <option name="name" value="Flow" />
+                        <option name="name" value="MatchingRule" />
                       </MetadataType>
                       <MetadataType>
                         <option name="members">
                           <set>
+                            <option value="Contact.Standard_Rule_for_Contacts_with_Duplicate_Leads" />
+                            <option value="Lead.Standard_Lead_Duplicate_Rule" />
+                            <option value="Account.Standard_Account_Duplicate_Rule" />
+                            <option value="Contact.Standard_Contact_Duplicate_Rule" />
+                            <option value="Lead.Standard_Rule_for_Leads_with_Duplicate_Contacts" />
+                          </set>
+                        </option>
+                        <option name="name" value="DuplicateRule" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
+                            <option value="Account" />
+                            <option value="Individual" />
                             <option value="Lead" />
-                            <option value="Case" />
+                            <option value="Contact" />
                           </set>
                         </option>
-                        <option name="name" value="AssignmentRules" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="Lead" />
-                            <option value="Case" />
-                          </set>
-                        </option>
-                        <option name="name" value="AutoResponseRules" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="Case" />
-                          </set>
-                        </option>
-                        <option name="name" value="EscalationRules" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="Store__c-en_US" />
-                            <option value="Service_Request__c-en_US" />
-                            <option value="cloudx_cms__SS_Carousel__c-en_US" />
-                            <option value="Assigned_Store__c-en_US" />
-                            <option value="Sales_Order__c-en_US" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c-en_US" />
-                          </set>
-                        </option>
-                        <option name="name" value="CustomObjectTranslation" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="Dashboard Home Page Default" />
-                          </set>
-                        </option>
-                        <option name="name" value="HomePageLayout" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="StoreDataHandler" />
-                            <option value="ServiceRequestTimeframeService" />
-                            <option value="SiteRegisterControllerTest" />
-                            <option value="ForgotPasswordControllerTest" />
-                            <option value="RTS_Portal_ManageUsers_Test" />
-                            <option value="DownloadPDF" />
-                            <option value="CommunitiesSelfRegConfirmControllerTest" />
-                            <option value="ServiceRequestHandler" />
-                            <option value="MyProfilePageController" />
-                            <option value="LightningForgotPasswordControllerTest" />
-                            <option value="ChangePasswordControllerTest" />
-                            <option value="StoreDataService" />
-                            <option value="CommunitiesSelfRegControllerTest" />
-                            <option value="LightningLoginFormController" />
-                            <option value="DocumentServiceTest" />
-                            <option value="CommunitiesLoginControllerTest" />
-                            <option value="LightningSelfRegisterControllerTest" />
-                            <option value="RTS_Portal_ManageUsersView_Test" />
-                            <option value="ForgotPasswordController" />
-                            <option value="RTS_Portal_ManageUsers_Ctlr" />
-                            <option value="ServiceRequest" />
-                            <option value="LightningForgotPasswordController" />
-                            <option value="CommunitiesLandingControllerTest" />
-                            <option value="SiteRegisterController" />
-                            <option value="LightningSelfRegisterController" />
-                            <option value="RTS_MasterSalesOrderTrigger_Test" />
-                            <option value="RTS_Portal_FileDownload_Ctlr" />
-                            <option value="CommunitiesSelfRegConfirmController" />
-                            <option value="VendorDataTest" />
-                            <option value="SiteLoginControllerTest" />
-                            <option value="CommunitiesSelfRegController" />
-                            <option value="RTS_Portal_ManageUsersView_Ctlr" />
-                            <option value="ServiceRequestTimeframeTest" />
-                            <option value="LightningLoginFormControllerTest" />
-                            <option value="RTS_Portal_AllTasks" />
-                            <option value="RTS_Portal_SalesOrderFileUpload_Test" />
-                            <option value="CommunitiesLoginController" />
-                            <option value="MyProfilePageControllerTest" />
-                            <option value="CommunitiesLandingController" />
-                            <option value="ServiceDataHandler" />
-                            <option value="VendorDataHandler" />
-                            <option value="RTS_Portal_ServiceRequestTrigger_Test" />
-                            <option value="DocumentServiceHandler" />
-                            <option value="testStringClass" />
-                            <option value="StoreDataTest" />
-                            <option value="RTS_Portal_SalesOrderFileUpload" />
-                            <option value="SiteLoginController" />
-                            <option value="DocumentService" />
-                            <option value="VendorDataService" />
-                            <option value="ParsingHelper" />
-                            <option value="ServiceRequestTest" />
-                            <option value="RTS_Portal_FileDownload_Test" />
-                            <option value="ChangePasswordController" />
-                            <option value="RTS_Portal_AllTasks_Test" />
-                          </set>
-                        </option>
-                        <option name="name" value="ApexClass" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="SolutionManager" />
-                            <option value="ReadOnly" />
-                            <option value="Chatter Free User" />
-                            <option value="Lumber Standard User" />
-                            <option value="Test Portal Profile" />
-                            <option value="MarketingProfile" />
-                            <option value="Chatter External User" />
-                            <option value="Standard" />
-                            <option value="Guest License User" />
-                            <option value="Admin" />
-                            <option value="ContractManager" />
-                            <option value="Customer Community Plus User" />
-                            <option value="CPQ Integration User" />
-                            <option value="Subcontractor Community Plus User" />
-                            <option value="Installer Community Plus User" />
-                            <option value="Chatter Moderator User" />
-                          </set>
-                        </option>
-                        <option name="name" value="Profile" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="RTS_MasterSalesOrder_Trigger" />
-                            <option value="RTS_MasterServiceRequest_Trigger" />
-                          </set>
-                        </option>
-                        <option name="name" value="ApexTrigger" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="Installer_Secondary_Admin_Portal_Permissions" />
-                            <option value="Installer_Primary_Admin_Portal_Permissions" />
-                            <option value="Subcontractor_Portal_Permissions" />
-                            <option value="Sales_User" />
-                          </set>
-                        </option>
-                        <option name="name" value="PermissionSet" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="PT1_profilePasswordPolicy1487029411628" />
-                            <option value="Lumber_Standard_User_profilePasswordPolicy1565806530113" />
-                            <option value="PT2_profilePasswordPolicy1539989544652" />
-                          </set>
-                        </option>
-                        <option name="name" value="ProfilePasswordPolicy" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="PT1_profileSessionSetting1487029411398" />
-                            <option value="PT2_profileSessionSetting1539989544703" />
-                            <option value="null_profileSessionSetting1565806530212" />
-                          </set>
-                        </option>
-                        <option name="name" value="ProfileSessionSetting" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="youtube" />
-                            <option value="static_resources_self" />
-                          </set>
-                        </option>
-                        <option name="name" value="CspTrustedSite" />
+                        <option name="name" value="MatchingRules" />
                       </MetadataType>
                       <MetadataType>
                         <option name="members">
@@ -831,8 +1162,8 @@
                           <set>
                             <option value="Black_Plank_RGB_Tagline_Below" />
                             <option value="banner" />
-                            <option value="lumberLogo" />
                             <option value="banner1" />
+                            <option value="lumberLogo" />
                           </set>
                         </option>
                         <option name="name" value="ContentAsset" />
@@ -892,14 +1223,6 @@
                       <MetadataType>
                         <option name="members">
                           <set>
-                            <option value="cbTest_Portal" />
-                          </set>
-                        </option>
-                        <option name="name" value="NetworkBranding" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
                             <option value="Test_Portal1" />
                           </set>
                         </option>
@@ -908,300 +1231,18 @@
                       <MetadataType>
                         <option name="members">
                           <set>
+                            <option value="cbTest_Portal" />
+                          </set>
+                        </option>
+                        <option name="name" value="NetworkBranding" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
                             <option value="Test Portal" />
                           </set>
                         </option>
                         <option name="name" value="Network" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="Sales_Order__c" />
-                            <option value="Account" />
-                            <option value="CaseContactRole" />
-                            <option value="Activity" />
-                            <option value="Image" />
-                            <option value="Document" />
-                            <option value="ScorecardMetric" />
-                            <option value="PushTopic" />
-                            <option value="Store__c" />
-                            <option value="Asset" />
-                            <option value="PromptAction" />
-                            <option value="ContactPointTypeConsent" />
-                            <option value="CampaignMember" />
-                            <option value="OrgMetricScanResult" />
-                            <option value="CollaborationGroupMember" />
-                            <option value="AccountContactRole" />
-                            <option value="StreamingChannel" />
-                            <option value="WorkBadge" />
-                            <option value="Pricebook2" />
-                            <option value="PricebookEntry" />
-                            <option value="ProfileSkillUser" />
-                            <option value="Recommendation" />
-                            <option value="Idea" />
-                            <option value="WorkThanks" />
-                            <option value="ExpressionFilter" />
-                            <option value="QuickTextUsage" />
-                            <option value="Contract" />
-                            <option value="ScorecardAssociation" />
-                            <option value="ChatterActivity" />
-                            <option value="RecordMergeHistory" />
-                            <option value="Site" />
-                            <option value="AccountBrand" />
-                            <option value="Product2" />
-                            <option value="Case" />
-                            <option value="SocialPost" />
-                            <option value="ProfileSkillEndorsement" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c" />
-                            <option value="NetworkMember" />
-                            <option value="AuthorizationFormText" />
-                            <option value="ContentVersion" />
-                            <option value="Lead" />
-                            <option value="ProfileSkill" />
-                            <option value="DuplicateRecordSet" />
-                            <option value="Solution" />
-                            <option value="ForecastingQuota" />
-                            <option value="QuickText" />
-                            <option value="AssetRelationship" />
-                            <option value="DataUseLegalBasis" />
-                            <option value="QuoteLineItem" />
-                            <option value="AuthorizationFormDataUse" />
-                            <option value="RequestsForAccessSIQ" />
-                            <option value="OrderItem" />
-                            <option value="WorkBadgeDefinition" />
-                            <option value="Event" />
-                            <option value="CollaborationGroup" />
-                            <option value="Task" />
-                            <option value="cloudx_cms__SS_Carousel__c" />
-                            <option value="AuthorizationFormConsent" />
-                            <option value="OpportunityLineItem" />
-                            <option value="ForecastingCategoryMapping" />
-                            <option value="ForecastingAdjustment" />
-                            <option value="Assigned_Store__c" />
-                            <option value="FeedItem" />
-                            <option value="ContractContactRole" />
-                            <option value="Service_Request__c" />
-                            <option value="ExchangeUserMapping" />
-                            <option value="SocialPersona" />
-                            <option value="Order" />
-                            <option value="EmailMessage" />
-                            <option value="UserProvisioningRequest" />
-                            <option value="Campaign" />
-                            <option value="AuthorizationForm" />
-                            <option value="Individual" />
-                            <option value="OrgMetricScanSummary" />
-                            <option value="MacroUsage" />
-                            <option value="PartnerRole" />
-                            <option value="OpportunityCompetitor" />
-                            <option value="MacroAction" />
-                            <option value="DataUsePurpose" />
-                            <option value="User" />
-                            <option value="ContactRequest" />
-                            <option value="Macro" />
-                            <option value="MacroInstruction" />
-                            <option value="DuplicateRecordItem" />
-                            <option value="ExpressionFilterCriteria" />
-                            <option value="CaseComment" />
-                            <option value="Opportunity" />
-                            <option value="Scorecard" />
-                            <option value="Topic" />
-                            <option value="StreamActivityAccess" />
-                            <option value="OpportunityContactRole" />
-                            <option value="Contact" />
-                            <option value="Quote" />
-                            <option value="ForecastingOwnerAdjustment" />
-                            <option value="AssistantProgress" />
-                            <option value="ForecastingTypeToCategory" />
-                            <option value="AccountContactRelation" />
-                            <option value="RecordAction" />
-                            <option value="TopicAssignment" />
-                          </set>
-                        </option>
-                        <option name="name" value="CustomObject" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="Sales_Order__c.Moisture_Reading__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Description__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Button_Label__c" />
-                            <option value="Service_Request__c.Cancellation__c" />
-                            <option value="Store__c.Email_Address__c" />
-                            <option value="Store__c.Phone__c" />
-                            <option value="Service_Request__c.Job_Accepted_by_Vendor__c" />
-                            <option value="Store__c.State__c" />
-                            <option value="Contact.Specialties__c" />
-                            <option value="Service_Request__c.InstallationPaperworkSent__c" />
-                            <option value="Service_Request__c.ShipToStreet__c" />
-                            <option value="Sales_Order__c.Service_Request_Num__c" />
-                            <option value="Store__c.Time_Zone__c" />
-                            <option value="Sales_Order__c.Work_Order__c" />
-                            <option value="Service_Request__c.ServiceRequestNumber__c" />
-                            <option value="Opportunity.ROI_Analysis_Completed__c" />
-                            <option value="Service_Request__c.Customer_Name__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Show_Video_Controls__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Slide_Order__c" />
-                            <option value="Service_Request__c.Notes__c" />
-                            <option value="User.Vendor_Number__c" />
-                            <option value="Service_Request__c.Customer__c" />
-                            <option value="Sales_Order__c.Ship_to_City__c" />
-                            <option value="Service_Request__c.ThankYouCall__c" />
-                            <option value="Account.Zip__c" />
-                            <option value="Sales_Order__c.InstallationPaperworkSent__c" />
-                            <option value="Store__c.City__c" />
-                            <option value="Assigned_Store__c.Store__c" />
-                            <option value="Service_Request__c.Installation_Scheduled__c" />
-                            <option value="Sales_Order__c.Installation_Change_Authorization__c" />
-                            <option value="AccountContactRelation.Relationship_Strength__c" />
-                            <option value="Account.Status__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Height__c" />
-                            <option value="Service_Request__c.Zip_Code__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Text_Alignment__c" />
-                            <option value="Service_Request__c.State__c" />
-                            <option value="Sales_Order__c.Cancellation__c" />
-                            <option value="Service_Request__c.JobScheduleDate__c" />
-                            <option value="Service_Request__c.Installation_Completed__c" />
-                            <option value="Sales_Order__c.InstallationSold__c" />
-                            <option value="Service_Request__c.Post_CallMade__c" />
-                            <option value="Sales_Order__c.EstimatedCompletion__c" />
-                            <option value="Service_Request__c.City__c" />
-                            <option value="Sales_Order__c.Post_CallMade__c" />
-                            <option value="Sales_Order__c.Store_Phone_Number__c" />
-                            <option value="Service_Request__c.Country__c" />
-                            <option value="Contact.Customer_Number__c" />
-                            <option value="CaseComment.ParentOrigin" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Button_Variant__c" />
-                            <option value="Service_Request__c.Community_User__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Image_URL__c" />
-                            <option value="Sales_Order__c.Lien_Waiver__c" />
-                            <option value="Sales_Order__c.MeasurementsReceived__c" />
-                            <option value="Store__c.Fax__c" />
-                            <option value="Sales_Order__c.Customer_Completion_Form__c" />
-                            <option value="Sales_Order__c.Customer_Phone__c" />
-                            <option value="Service_Request__c.Pre_CallMade__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Title_Text_Size__c" />
-                            <option value="Sales_Order__c.ThankYouCall__c" />
-                            <option value="Contact.Badge_Number__c" />
-                            <option value="Account.EmailAddress__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Button_URL__c" />
-                            <option value="Service_Request__c.MeasurementsReceived__c" />
-                            <option value="CaseComment.CommentBody" />
-                            <option value="Service_Request__c.ShipToCountry__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Text_Height__c" />
-                            <option value="Sales_Order__c.Subcontractor__c" />
-                            <option value="Store__c.Street__c" />
-                            <option value="Service_Request__c.QuoteBuilt__c" />
-                            <option value="Assigned_Store__c.Installer_or_Sub__c" />
-                            <option value="Sales_Order__c.QuoteBuilt__c" />
-                            <option value="Contact.Status__c" />
-                            <option value="Service_Request__c.Vendor__c" />
-                            <option value="Sales_Order__c.Status__c" />
-                            <option value="Account.Country__c" />
-                            <option value="Service_Request__c.StoreZipCode__c" />
-                            <option value="Sales_Order__c.MeasureRequestReceived__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Video_Embed_URL__c" />
-                            <option value="Service_Request__c.Customer_Number__c" />
-                            <option value="Sales_Order__c.Installation_Change_Order__c" />
-                            <option value="Store__c.Status__c" />
-                            <option value="Sales_Order__c.Type_of_Order__c" />
-                            <option value="Service_Request__c.StoreNumber__c" />
-                            <option value="Service_Request__c.MeasureRequestSent__c" />
-                            <option value="Sales_Order__c.EstimatedIPPayout__c" />
-                            <option value="cloudx_cms__SS_Carousel__c.cloudx_cms__Name__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Title__c" />
-                            <option value="Store__c.Zip_Code__c" />
-                            <option value="cloudx_cms__SS_Carousel__c.cloudx_cms__No_of_Slides__c" />
-                            <option value="Sales_Order__c.Pre_CallMade__c" />
-                            <option value="Sales_Order__c.Store__c" />
-                            <option value="Opportunity.Loss_Reason__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Description_Text_Color__c" />
-                            <option value="Account.Street__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Raw_MP4_Video_URL__c" />
-                            <option value="Service_Request__c.ShipToState__c" />
-                            <option value="Sales_Order__c.InstallationScheduled__c" />
-                            <option value="Sales_Order__c.MeasureRequestSent__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Text_Overlay_Background__c" />
-                            <option value="Service_Request__c.Store__c" />
-                            <option value="Sales_Order__c.Customer_Name__c" />
-                            <option value="Service_Request__c.PGI_Invoiced__c" />
-                            <option value="Store__c.Store_Number__c" />
-                            <option value="Opportunity.Discovery_Completed__c" />
-                            <option value="Sales_Order__c.SalesOrderNumber__c" />
-                            <option value="Sales_Order__c.InstallationCompleted__c" />
-                            <option value="Service_Request__c.Measure_Scheduled__c" />
-                            <option value="Sales_Order__c.Ship_to_Country__c" />
-                            <option value="Sales_Order__c.Service_Request__c" />
-                            <option value="Service_Request__c.MeasureRequestReceived__c" />
-                            <option value="Sales_Order__c.OrderType__c" />
-                            <option value="Opportunity.Budget_Confirmed__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Loop_Video__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Raw_OGG_Video_URL__c" />
-                            <option value="Sales_Order__c.Project_Assessment_Form__c" />
-                            <option value="Sales_Order__c.Ship_to_Zip_Code__c" />
-                            <option value="Sales_Order__c.MeasureScheduled__c" />
-                            <option value="Service_Request__c.Street__c" />
-                            <option value="Store__c.Division__c" />
-                            <option value="Sales_Order__c.PGI_Invoiced__c" />
-                            <option value="Account.VendorNumber__c" />
-                            <option value="Sales_Order__c.Ship_to_State__c" />
-                            <option value="Account.State__c" />
-                            <option value="Service_Request__c.Phone__c" />
-                            <option value="Service_Request__c.Customer_Email__c" />
-                            <option value="Sales_Order__c.OrderDate__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Autoplay__c" />
-                            <option value="Service_Request__c.CreationDate__c" />
-                            <option value="Sales_Order__c.Vendor__c" />
-                            <option value="Store__c.Region__c" />
-                            <option value="Contact.Vendor_Number__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Title_Text_Color__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Carousel__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Raw_WEBM_Video_URL__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Description_Size__c" />
-                            <option value="Service_Request__c.ShipToZipCode__c" />
-                            <option value="Service_Request__c.Status__c" />
-                            <option value="Store__c.Country__c" />
-                            <option value="Account.City__c" />
-                            <option value="Service_Request__c.InstallationSold__c" />
-                            <option value="Sales_Order__c.Ship_to_Street__c" />
-                            <option value="Service_Request__c.ShipToCity__c" />
-                            <option value="cloudx_cms__SS_Carousel_Slide__c.cloudx_cms__Text_Position__c" />
-                            <option value="Service_Request__c.Estimated_Completion__c" />
-                          </set>
-                        </option>
-                        <option name="name" value="CustomField" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="Contact.Standard_Rule_for_Contacts_with_Duplicate_Leads" />
-                            <option value="Lead.Standard_Lead_Duplicate_Rule" />
-                            <option value="Account.Standard_Account_Duplicate_Rule" />
-                            <option value="Contact.Standard_Contact_Duplicate_Rule" />
-                            <option value="Lead.Standard_Rule_for_Leads_with_Duplicate_Contacts" />
-                          </set>
-                        </option>
-                        <option name="name" value="DuplicateRule" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="Contact.Standard_Contact_Match_Rule_v1_1" />
-                            <option value="Lead.Standard_Lead_Match_Rule_v1_0" />
-                            <option value="Account.Standard_Account_Match_Rule_v1_0" />
-                          </set>
-                        </option>
-                        <option name="name" value="MatchingRule" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="Account" />
-                            <option value="Individual" />
-                            <option value="Lead" />
-                            <option value="Contact" />
-                          </set>
-                        </option>
-                        <option name="name" value="MatchingRules" />
                       </MetadataType>
                       <MetadataType>
                         <option name="members">
@@ -1279,8 +1320,8 @@
                         <option name="members">
                           <set>
                             <option value="Order" />
-                            <option value="Account" />
                             <option value="Sales_Order__c" />
+                            <option value="Account" />
                             <option value="Task" />
                             <option value="cloudx_cms__SS_Carousel__c" />
                             <option value="Contact" />
@@ -1325,9 +1366,9 @@
                             <option value="Security" />
                             <option value="Knowledge" />
                             <option value="Picklist" />
+                            <option value="Name" />
                             <option value="ChatterEmailsMD" />
                             <option value="Ideas" />
-                            <option value="Name" />
                             <option value="DevHub" />
                             <option value="EmailAdministration" />
                             <option value="Formula" />
@@ -1335,12 +1376,12 @@
                             <option value="SocialCustomerService" />
                             <option value="Sharing" />
                             <option value="Currency" />
-                            <option value="Search" />
                             <option value="ExternalServices" />
+                            <option value="Search" />
                             <option value="PardotEinstein" />
                             <option value="SocialProfile" />
-                            <option value="EnhancedNotes" />
                             <option value="FileUploadAndDownloadSecurity" />
+                            <option value="EnhancedNotes" />
                             <option value="RetailExecution" />
                             <option value="Order" />
                             <option value="GoogleApps" />
@@ -1348,8 +1389,8 @@
                             <option value="Bot" />
                             <option value="EAC" />
                             <option value="Pardot" />
-                            <option value="ObjectLinking" />
                             <option value="Discovery" />
+                            <option value="ObjectLinking" />
                             <option value="UserInterface" />
                             <option value="Forecasting" />
                             <option value="LiveAgent" />
@@ -1359,11 +1400,11 @@
                             <option value="Content" />
                             <option value="LightningExperience" />
                             <option value="EmailTemplate" />
+                            <option value="Notifications" />
                             <option value="Contract" />
                             <option value="RecordPage" />
-                            <option value="Notifications" />
-                            <option value="Site" />
                             <option value="Industries" />
+                            <option value="Site" />
                             <option value="SystemNotification" />
                             <option value="Org" />
                             <option value="Macro" />
@@ -1374,9 +1415,9 @@
                             <option value="Case" />
                             <option value="EssentialsTrialOrg" />
                             <option value="Language" />
-                            <option value="MyDomain" />
                             <option value="OmniChannel" />
                             <option value="ConnectedApp" />
+                            <option value="MyDomain" />
                             <option value="Opportunity" />
                             <option value="MapsAndLocation" />
                             <option value="Apex" />
@@ -1396,10 +1437,10 @@
                             <option value="WorkDotCom" />
                             <option value="UserManagement" />
                             <option value="Event" />
-                            <option value="InvocableAction" />
                             <option value="Entitlement" />
-                            <option value="Voice" />
+                            <option value="InvocableAction" />
                             <option value="PathAssistant" />
+                            <option value="Voice" />
                           </set>
                         </option>
                         <option name="name" value="Settings" />
@@ -1414,8 +1455,8 @@
                             <option value="ActivityRecurrence2" />
                             <option value="AssistantInteraction" />
                             <option value="Image" />
-                            <option value="Service_Request__c" />
                             <option value="ExchangeUserMapping" />
+                            <option value="Service_Request__c" />
                             <option value="Asset" />
                             <option value="PromptAction" />
                             <option value="ContactPointTypeConsent" />
@@ -1435,8 +1476,8 @@
                             <option value="DataUsePurpose" />
                             <option value="ContactRequest" />
                             <option value="User" />
-                            <option value="AssistantRecommendation" />
                             <option value="SiqUserBlacklist" />
+                            <option value="AssistantRecommendation" />
                             <option value="AccountBrand" />
                             <option value="Macro" />
                             <option value="ManagedContentRelease" />
@@ -1454,8 +1495,8 @@
                             <option value="DataUseLegalBasis" />
                             <option value="Calendar2" />
                             <option value="AuthorizationFormDataUse" />
-                            <option value="NotifDeliveryUserPref" />
                             <option value="Contact" />
+                            <option value="NotifDeliveryUserPref" />
                             <option value="RequestsForAccessSIQ" />
                             <option value="ListEmail" />
                             <option value="WorkBadgeDefinition" />
@@ -1551,8 +1592,8 @@
                       <MetadataType>
                         <option name="members">
                           <set>
-                            <option value="SharedDocuments" />
                             <option value="Communities_Shared_Document_Folder" />
+                            <option value="SharedDocuments" />
                             <option value="SalesTools" />
                           </set>
                         </option>
@@ -1572,12 +1613,12 @@
                             <option value="Sales_Marketing_Reports/Closed_Lost_by_Reason" />
                             <option value="Service_Dashboards_Reports/Trend_of_Cases_Closed" />
                             <option value="Service_Dashboards_Reports/Average_Case_Resolution_Time_MTD" />
-                            <option value="Sales_Marketing_Reports/Leads_Created_Current_FQ" />
                             <option value="Sales_and_Marketing_Reports/Sales_Exec_Open_Pipeline_next_90_days" />
+                            <option value="Sales_Marketing_Reports/Leads_Created_Current_FQ" />
                             <option value="Sales_Marketing_Reports/Leads_Converted_Current_FQ2" />
                             <option value="Sales_and_Marketing_Reports/Sales_Exec_Lost_Deals" />
-                            <option value="Sales_and_Marketing_Reports/Closed_Deals_leader_board" />
                             <option value="Sales_and_Marketing_Reports/LeadsbySource" />
+                            <option value="Sales_and_Marketing_Reports/Closed_Deals_leader_board" />
                             <option value="unfiled$public/SampleReportPipelineByCloseMonth" />
                             <option value="unfiled$public/SampleReportLastModifiedBy" />
                             <option value="unfiled$public/SampleReportOpenDeals" />
@@ -1597,16 +1638,16 @@
                             <option value="unfiled$public/SampleReportDocumentLibrary" />
                             <option value="Service_Dashboards_Reports/High_Priority_Open_Cases_by_Account" />
                             <option value="Sales_and_Marketing_Reports/Activities_by_Salesperson" />
-                            <option value="unfiled$public/SampleReportSalesLeaderboard" />
                             <option value="Sales_and_Marketing_Reports/Marketing_Exec_Conversion_Rate" />
+                            <option value="unfiled$public/SampleReportSalesLeaderboard" />
                             <option value="unfiled$public/SampleReportLoginWallofShame" />
                             <option value="unfiled$public/SampleReportSolutionsAdded" />
                             <option value="unfiled$public/SampleReportsLeadsbyStatus" />
                             <option value="Sales_and_Marketing_Reports/Marketing_Exec_Leads_by_Campaigns" />
                             <option value="unfiled$public/SampleReportofCases" />
                             <option value="Sales_and_Marketing_Reports/Marketing_Exec_Lead_Trends_by_Status" />
-                            <option value="Service_Dashboards_Reports/Top_10_Cases_by_Age" />
                             <option value="Service_Dashboards_Reports/Cases_Closed_MTD_by_Agent" />
+                            <option value="Service_Dashboards_Reports/Top_10_Cases_by_Age" />
                             <option value="Service_Dashboards_Reports/Cases_Currently_Open_by_Origin" />
                             <option value="Sales_and_Marketing_Reports/Sales_Person_Open_Pipeline_by_stage" />
                             <option value="Sales_and_Marketing_Reports/Sales_Exec" />
@@ -1638,9 +1679,9 @@
                             <option value="Service_Dashboards_Reports/Trend_of_Cases_Created" />
                             <option value="Service_Dashboards_Reports/Cases_by_Type_and_Open_Status" />
                             <option value="Sales_Marketing_Reports/Conversion_Rate" />
-                            <option value="unfiled$public/SampleReportofContacts" />
-                            <option value="unfiled$public/SampleReportofSolutions" />
                             <option value="Service_Dashboards_Reports/Cases_by_Priority" />
+                            <option value="unfiled$public/SampleReportofSolutions" />
+                            <option value="unfiled$public/SampleReportofContacts" />
                             <option value="Service_Dashboards_Reports/Case_Resolution_Time_MTD_by_Origin" />
                             <option value="unfiled$public/SampleReportLeadsbyLeadSource" />
                             <option value="unfiled$public/SampleReportMonthtoDateTrending" />
@@ -1652,8 +1693,8 @@
                             <option value="unfiled$public/SampleReportCompletedActivities" />
                             <option value="Sales_Marketing_Reports/Closed_Won_80_This_Q_by_Owner" />
                             <option value="Sales_and_Marketing_Reports/CampaignROIbyCampaignType" />
-                            <option value="unfiled$public/SampleReportPipelineHistory" />
                             <option value="unfiled$public/SampleReportofTasksandActivities" />
+                            <option value="unfiled$public/SampleReportPipelineHistory" />
                             <option value="unfiled$public/SampleReportofReports" />
                             <option value="Sales_Marketing_Reports/Win_Ratio" />
                             <option value="DashboardReportsAdoption/UsageActivitiesCompleted" />
@@ -1696,6 +1737,14 @@
                       <MetadataType>
                         <option name="members">
                           <set>
+                            <option value="Communities_Shared_Document_Folder/loginLogo_jpg.jpg" />
+                          </set>
+                        </option>
+                        <option name="name" value="Document" />
+                      </MetadataType>
+                      <MetadataType>
+                        <option name="members">
+                          <set>
                             <option value="unfiled$public/SUPPORTSelfServiceNewCommentSAMPLE" />
                             <option value="unfiled$public/SUPPORTSelfServiceResetPasswordSAMPLE" />
                             <option value="unfiled$public/LeadsWebtoLeademailresponseSAMPLE" />
@@ -1703,8 +1752,8 @@
                             <option value="unfiled$public/Sample_HappyBirthday" />
                             <option value="unfiled$public/Sample_MeetOnsite" />
                             <option value="unfiled$public/SUPPORTWebtoCaseemailresponseSAMPLE" />
-                            <option value="unfiled$public/Sample_DealClosed" />
                             <option value="unfiled$public/SUPPORTSelfServiceNewUserLoginSAMPLE" />
+                            <option value="unfiled$public/Sample_DealClosed" />
                             <option value="unfiled$public/Sample_NextSteps" />
                             <option value="unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE" />
                             <option value="unfiled$public/SUPPORTSelfServiceResetPasswordSAMPLE2" />
@@ -1717,10 +1766,10 @@
                             <option value="unfiled$public/Sample_ScheduleMeeting" />
                             <option value="unfiled$public/SUPPORTCaseResponsewithSolutionSAMPLE" />
                             <option value="unfiled$public/SUPPORTSelfServiceNewUserLoginInformationSAMPLE" />
-                            <option value="unfiled$public/Sample_GreatMeetingYou" />
-                            <option value="unfiled$public/ContactFollowUpSAMPLE" />
                             <option value="unfiled$public/Sample_CustomerInterest" />
+                            <option value="unfiled$public/Sample_GreatMeetingYou" />
                             <option value="unfiled$public/Sample_CallNoAnswer" />
+                            <option value="unfiled$public/ContactFollowUpSAMPLE" />
                             <option value="unfiled$public/SUPPORTCaseescalationnotificationSAMPLE" />
                             <option value="unfiled$public/Sample_Reconnecting" />
                             <option value="unfiled$public/LeadsNewassignmentnotificationSAMPLE" />
@@ -1729,14 +1778,6 @@
                           </set>
                         </option>
                         <option name="name" value="EmailTemplate" />
-                      </MetadataType>
-                      <MetadataType>
-                        <option name="members">
-                          <set>
-                            <option value="Communities_Shared_Document_Folder/loginLogo_jpg.jpg" />
-                          </set>
-                        </option>
-                        <option name="name" value="Document" />
                       </MetadataType>
                     </set>
                   </option>
@@ -1747,7 +1788,7 @@
         </option>
         <option name="soqlQuerySettings">
           <SoqlQuerySettings>
-            <option name="documentText" value="SELECT Id FROM User WHERE Vendor_Number__c = '1044'" />
+            <option name="documentText" value="SELECT Client_Id__c,Client_Secret__c,DeveloperName,grant_type__c FROM Token_Credential__mdt" />
           </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
@@ -1811,7 +1852,8 @@
       <workItem from="1571752048009" duration="4371000" />
       <workItem from="1571835382521" duration="174000" />
       <workItem from="1571843875517" duration="3000" />
-      <workItem from="1571847623474" duration="14105000" />
+      <workItem from="1571847623474" duration="18623000" />
+      <workItem from="1572016966323" duration="2570000" />
     </task>
     <servers />
   </component>

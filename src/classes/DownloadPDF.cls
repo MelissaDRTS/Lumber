@@ -108,7 +108,7 @@ public virtual class DownloadPDF {
     public static List<Document> getPdfDocuments(String SalesOrderType, String ServiceRequestId) {
         
         String singleQuote = '\'';
-        String SRId = singleQuote + '8000000660' + SingleQuote;
+        String SRId = singleQuote + ServiceRequestId + SingleQuote;
         String SRType;
         if (SalesOrderType == SALES_ORDER_INSTALL){
             SRType = PDF_TYPE_INSTALL;
