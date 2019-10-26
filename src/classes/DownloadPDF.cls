@@ -67,6 +67,8 @@ public virtual class DownloadPDF {
     
     //add client
     public static string bearer() {
+
+        //Token_Credential__mdt bearCredential = [SELECT Client_Id__c,Client_Secret__c,DeveloperName,grant_type__c FROM Token_Credential__mdt];
         Http http = new Http();
         HttpRequest request = new HttpRequest();
         String endpoint = 'https://lldev.apimanagement.us3.hana.ondemand.com:443/sap/opu/odata/sap/oAuthService/GenerateToken';
@@ -148,7 +150,7 @@ public virtual class DownloadPDF {
                         
                         documents.add(newDocument);
                         
-                        break;
+                       break;
                     }
                 }
             }
@@ -168,10 +170,13 @@ public virtual class DownloadPDF {
         
         for (DownloadPDF.Document pdf : pdfData) {
             ContentVersion contentVersion = new ContentVersion();
+
+            List<String> fileEx = pdf.fileName.split('\\.');
+
             
             contentVersion.Title = pdf.fileName;
             contentVersion.VersionData = EncodingUtil.base64Decode(pdf.base64);
-            contentVersion.PathOnClient = 'ionicLogo.pdf';
+            contentVersion.PathOnClient = 'ionicLogo.' + fileEx[fileEx.size()-1];
             contentVersion.ContentLocation = 'S';
             
             contentVersions.add(contentVersion);

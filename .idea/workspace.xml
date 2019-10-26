@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd090f78-13d3-4edc-b2b4-c578d73dcbf8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/customMetadata/Token_Credential.Bearer.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lumber.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lumber.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/RTS_Portal_AllTasks_Cmp/RTS_Portal_AllTasks_Cmp.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/RTS_Portal_AllTasks_Cmp/RTS_Portal_AllTasks_Cmp.cmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/RTS_Portal_AllTasks_Cmp/RTS_Portal_AllTasks_CmpHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/RTS_Portal_AllTasks_Cmp/RTS_Portal_AllTasks_CmpHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/RTS_Portal_ServiceRequestDocumentUpload_Cmp/RTS_Portal_ServiceRequestDocumentUpload_Cmp.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/RTS_Portal_ServiceRequestDocumentUpload_Cmp/RTS_Portal_ServiceRequestDocumentUpload_Cmp.cmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/RTS_Portal_ServiceRequestDocumentUpload_Cmp/RTS_Portal_ServiceRequestDocumentUpload_CmpController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/RTS_Portal_ServiceRequestDocumentUpload_Cmp/RTS_Portal_ServiceRequestDocumentUpload_CmpController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/RTS_Portal_ServiceRequestDocumentUpload_Cmp/RTS_Portal_ServiceRequestDocumentUpload_CmpHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/RTS_Portal_ServiceRequestDocumentUpload_Cmp/RTS_Portal_ServiceRequestDocumentUpload_CmpHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/DocumentServiceHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/DocumentServiceHandler.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/DownloadPDF.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/DownloadPDF.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/RTS_Portal_AllTasks.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/RTS_Portal_AllTasks.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/RTS_Portal_ManageUsersView_Ctlr.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/RTS_Portal_ManageUsersView_Ctlr.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/RTS_Portal_SalesOrderFileUpload.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/RTS_Portal_SalesOrderFileUpload.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ServiceDataHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ServiceDataHandler.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ServiceRequestHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ServiceRequestHandler.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/triggers/RTS_MasterSalesOrder_Trigger.trigger" beforeDir="false" afterPath="$PROJECT_DIR$/src/triggers/RTS_MasterSalesOrder_Trigger.trigger" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +41,7 @@
         <option name="anonymousApexSettings">
           <AnonymousApexSettings>
             <option name="apexLogLevel" value="FINEST" />
-            <option name="documentText" value="User testUsr = new User();&#10;testUsr.LastName = 'testUser';&#10;insert testUsr;&#10;" />
+            <option name="documentText" value="&#10;&#10;String fileEx = '8000000660_IP_ProjectAssessmentForm.xls';&#10;List&lt;String&gt; testString = fileEx.split('\\.');&#10;System.debug(testString[testString.size()-1]);&#10;System.debug('Test');" />
             <option name="splitterProportion" value="0.48788068" />
           </AnonymousApexSettings>
         </option>
@@ -65,8 +53,8 @@
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
                       <entry key="APEXCLASS:DOCUMENTSERVICE" value="1571754784838" />
-                      <entry key="APEXCLASS:DOCUMENTSERVICEHANDLER" value="1571754742663" />
-                      <entry key="APEXCLASS:DOWNLOADPDF" value="1572025853665" />
+                      <entry key="APEXCLASS:DOCUMENTSERVICEHANDLER" value="1572028484247" />
+                      <entry key="APEXCLASS:DOWNLOADPDF" value="1572030698872" />
                       <entry key="APEXCLASS:SERVICEDATAHANDLER" value="1572025853665" />
                       <entry key="APEXCLASS:SERVICEREQUEST" value="1571227787659" />
                       <entry key="APEXCLASS:SERVICEREQUESTHANDLER" value="1572012513585" />
@@ -1853,7 +1841,8 @@
       <workItem from="1571835382521" duration="174000" />
       <workItem from="1571843875517" duration="3000" />
       <workItem from="1571847623474" duration="18623000" />
-      <workItem from="1572016966323" duration="2570000" />
+      <workItem from="1572016966323" duration="3014000" />
+      <workItem from="1572027345780" duration="2305000" />
     </task>
     <servers />
   </component>

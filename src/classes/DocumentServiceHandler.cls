@@ -84,12 +84,12 @@ public with sharing class DocumentServiceHandler {
 
         Map<String, DocumentData> blobMap = new Map<String, DocumentData>();
 
-        List<ContentVersion> listOfContent = [SELECT Id, ContentDocumentId, title, VersionData, FileType FROM ContentVersion Where ContentDocumentId IN :cdlIds];
+        List<ContentVersion> listOfContent = [SELECT Id, ContentDocumentId, title, VersionData, FileExtension FROM ContentVersion Where ContentDocumentId IN :cdlIds];
 
         for (ContentVersion content: listOfContent){
 
             DocumentData docData = new DocumentData();
-            docData.fileType = content.FileType;
+            docData.fileType = content.FileExtension;
             docData.base64Data = content.VersionData;
 
             blobMap.put(content.ContentDocumentId, docData);
