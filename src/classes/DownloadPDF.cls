@@ -2,24 +2,10 @@
 * Created by melissaderricott on 10/9/19.
 */
 
-//@RestResource(urlMapping='/LLPDF/*')
+
 public virtual class DownloadPDF {
-    // @HttpGet
-    /**
-* Create Sites page using PDF blob
-*/
-    //            global static void getPDF() {
-    //                RestRequest req = RestContext.request;
-    //                String SRId = RestContext.request.params.get('SRId') ;
-    //                String SRType = RestContext.request.params.get('SRType');
-    //                RestResponse res = RestContext.response;
-    //                res.addHeader('Content-Type','application/pdf');
-    //                res.responseBody = EncodingUtil.base64Decode(pdf(SRType, SRId));
-    //            }
-    
-    
-    
-    
+
+
     public static final String SALES_ORDER_INSTALL = 'Install Order';
     public static final String SALES_ORDER_MEASURE = 'Measure Order';
     public static final String PDF_TYPE_ASSESS = '\'Assess\'';
@@ -52,61 +38,44 @@ public virtual class DownloadPDF {
             System.debug(e.getMessage());
             return false;
         }
-        
-        
-        
+
+
+
     }
-    
-    
-    // Data points needed: Sales order Type, ServiceRequest Number and Sales OrderId
+
     public static Sales_Order__c getSalesOrder(Id recordId) {
         
         return [SELECT Id, Service_Request__c, Service_Request__r.ServiceRequestNumber__c, Type_of_Order__c FROM Sales_Order__c WHERE Id = :recordId];
     }
     
-    
-    //add client
+
     public static string bearer() {
 
-        //Token_Credential__mdt bearCredential = [SELECT Client_Id__c,Client_Secret__c,DeveloperName,grant_type__c FROM Token_Credential__mdt];
+        Token_Credential__mdt bearCredential = [SELECT Client_Id__c,Client_Secret__c,DeveloperName,grant_type__c, Endpoint__c FROM Token_Credential__mdt WHERE DeveloperName ='Bearer'];
         Http http = new Http();
         HttpRequest request = new HttpRequest();
-        String endpoint = 'https://lldev.apimanagement.us3.hana.ondemand.com:443/sap/opu/odata/sap/oAuthService/GenerateToken';
+        String endpoint = bearCredential.Endpoint__c;
         request.setEndpoint(endpoint);
         request.setMethod('POST');
         request.setHeader('Content-Type', 'application/x-www-form-urlencoded');
         request.setHeader('Accept', 'application/json');
-        String tokenPostBody = 'client_id=I4JVgJgLlJGAkhArxvKIdmcZKnHffDuM&client_secret=TFKNe45hDYG6tNeq&grant_type=client_credentials';
+        String tokenPostBody = 'client_id=' + bearCredential.Client_Id__c + '&client_secret=' + bearCredential.Client_Secret__c + '&grant_type=' + bearCredential.grant_type__c;
         request.setBody(tokenPostBody);
         HttpResponse postResponse = http.send(request);
         //System.debug(postResponse.getBody());
         Map<String, Object> results = (Map<String, Object>) JSON.deserializeUntyped(postResponse.getBody());
         // System.debug(results.get('access_token'));
         String token = results.get('access_token').toString();
-        
-        
+
         return token;
-        
     }
-    
-    
-    //
-    //
-    //    Map<String, Object> results = (Map<String, Object>) JSON.deserializeUntyped(response.getBody());
-    //    //Cast the values in the 'animals' key as a list
-    //    List<Object> animals = (List<Object>) results.get('animals');
-    //    System.debug('Received the following animals:');
-    //    for (Object animal : animals){
-    //    System.debug(animal);
-    
-    
+
     public class Document {
         public String fileName;
         public String base64;
     }
     
-    
-    //public static List<Document> getPdfDocuments(String SalesOrderType, String ServiceRequestId) {
+
     public static List<Document> getPdfDocuments(String SalesOrderType, String ServiceRequestId) {
         
         String singleQuote = '\'';
@@ -117,11 +86,11 @@ public virtual class DownloadPDF {
         } else if (SalesOrderType == SALES_ORDER_MEASURE){
             SRType = PDF_TYPE_ASSESS;
         }
-        
-        
+
+        LiveLink__mdt liveLinkEndpoint = [SELECT Endpoint__c FROM LiveLink__mdt WHERE DeveloperName = 'LumberLiveLink' LIMIT 1];
         Http http = new Http();
         HttpRequest request = new HttpRequest();
-        String endpoint = 'https://lldev.apimanagement.us3.hana.ondemand.com/ZRETRIEVE_LLIS_FORMS_SRV/getForms?SRId=' + SRId + '&SRType=' + SRType ;
+        String endpoint = liveLinkEndpoint.Endpoint__c + '?SRId=' + SRId + '&SRType=' + SRType ;
         request.setEndpoint(endpoint);
         request.setMethod('GET');
         String bearer = 'Bearer ' + bearer();
@@ -154,26 +123,20 @@ public virtual class DownloadPDF {
                     }
                 }
             }
-            
         }
         
         return documents;
     }
-    
-    
-    
+
     
     public static List<ContentVersion> createContentVersion(List<Document> pdfData) {
         List<ContentVersion> contentVersions = new List<ContentVersion>();
-        
-        
-        
+
         for (DownloadPDF.Document pdf : pdfData) {
             ContentVersion contentVersion = new ContentVersion();
 
             List<String> fileEx = pdf.fileName.split('\\.');
 
-            
             contentVersion.Title = pdf.fileName;
             contentVersion.VersionData = EncodingUtil.base64Decode(pdf.base64);
             contentVersion.PathOnClient = 'ionicLogo.' + fileEx[fileEx.size()-1];
@@ -194,14 +157,13 @@ public virtual class DownloadPDF {
             if(result.isSuccess()){
                 contentVersionsIds.add(result.getId());
                 System.debug(contentVersionsIds);
-                
             }
-            
         }
         
         Map<Id, ContentVersion> contentDocumentIds = new Map<Id, ContentVersion> ([SELECT Id, ContentDocumentId FROM ContentVersion WHERE Id IN :contentVersionsIds]);
         
         for(ID cv : contentDocumentIds.keySet()){
+
             ContentDocumentLink contentDocumentLink = new ContentDocumentLink();
             contentDocumentLink.ContentDocumentId = contentDocumentIds.get(cv).ContentDocumentId;
             contentDocumentLink.LinkedEntityId = recordId;
@@ -209,9 +171,6 @@ public virtual class DownloadPDF {
             
             contentDocumentLinks.add(contentDocumentLink);
         }
-        
         return contentDocumentLinks;
     }
-    
-    
 }

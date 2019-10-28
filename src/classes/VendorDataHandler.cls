@@ -10,9 +10,9 @@
  * of Strings in the VendorDataResponse objects returned by the handle method.
  */
 public with sharing class VendorDataHandler {
-    private static final String COMMUNITY_PROFILE = 'Installer Community Plus User';
-    private static final String COMMUNITY_PERMISSION_SET = 'Installer_Primary_Admin_Portal_Permissions';
-    private static final String USERNAME_SUFFIX = '.SOAPSERV';
+    //private static final String COMMUNITY_PROFILE = 'Installer Community Plus User';
+    //private static final String COMMUNITY_PERMISSION_SET = 'Installer_Primary_Admin_Portal_Permissions';
+   // private static final String USERNAME_SUFFIX = '.SOAPSERV';
 
     public List<VendorDataService.VendorDataResponse> handle(List<VendorDataService.VendorData> vendorDetails) {
 
@@ -375,9 +375,12 @@ public with sharing class VendorDataHandler {
                 WHERE Vendor_Number__c IN :vendorNumbers AND Vendor_Number__c != null
         ];
 
+
+        VendorDataHandler__mdt vendorData = [SELECT DeveloperName, Community_Permission_Set__c, Community_Profile__c FROM VendorDataHandler__mdt WHERE DeveloperName = 'VendorServiceVars' LIMIT 1];
+
         // Cache the Id for the PermissionSet and Profile for Users
-        Id communityPermissionSetId = [SELECT Id FROM PermissionSet WHERE Name = :COMMUNITY_PERMISSION_SET LIMIT 1].Id;
-        Id communityProfileId = [SELECT Id FROM Profile WHERE Name = :COMMUNITY_PROFILE LIMIT 1].Id;
+        Id communityPermissionSetId = [SELECT Id FROM PermissionSet WHERE Name = :vendorData.Community_Permission_Set__c LIMIT 1].Id;
+        Id communityProfileId = [SELECT Id FROM Profile WHERE Name = :vendorData.Community_Profile__c LIMIT 1].Id;
 
         // Grab all Current Users in the system
         List<User> allUsers = [SELECT Id, Vendor_Number__c FROM User];
@@ -389,7 +392,7 @@ public with sharing class VendorDataHandler {
                 User vendorUser = findOrCreateUser(vendorContact.Vendor_Number__c, allUsers, communityProfileId);
 
                 if (vendorUser == null) {
-                    vendorUser = createNewUser(vendorContact, communityProfileId);
+                    vendorUser = createNewUser(vendorContact, communityProfileId, vendorData.User_Suffix__c);
                 } else {
                     updateUser(vendorUser, vendorContact);
                 }
@@ -469,7 +472,7 @@ public with sharing class VendorDataHandler {
      *
      * @return  The create User, is hasn't been inserted yet.
      */
-    private static User createNewUser(Contact vendorContact, Id communityProfileId) {
+    private static User createNewUser(Contact vendorContact, Id communityProfileId, String userSuffix) {
         String vendorAlias = vendorContact.Email.toLowerCase().substring(0, Math.min(8, vendorContact.Email.lastIndexOf('@')));
         String vendorUsername = vendorContact.Email;
 
@@ -477,7 +480,7 @@ public with sharing class VendorDataHandler {
                 LastName = vendorContact.LastName,
                 Alias = vendorAlias,
                 Email = vendorContact.Email,
-                Username = vendorUsername + USERNAME_SUFFIX,
+                Username = vendorUsername + userSuffix,
                 CommunityNickname = vendorContact.Email,
                 LocaleSidKey = 'en_US',
                 TimeZoneSidKey = 'America/New_York',
