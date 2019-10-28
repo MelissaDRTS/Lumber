@@ -69,12 +69,7 @@ public with sharing class DocumentServiceHandler {
 
     //3. Map<Id, Blob> ContentDocumentId, VersionData from query (Params ContentDocumentLink list)
     // Query ContentVersion for Blob
-
-
-
-
-
-
+    
     private Map<String, DocumentData> getBase64Data(List<ContentDocumentLink> contentDocumentLinks){
         Set<Id> cdlIds = new Set<Id>();
 

@@ -17,18 +17,19 @@ public virtual class DownloadPDF {
             
             Sales_Order__c currentSalesOrder = getSalesOrder(recordId);
             
-            List<Document> pdfDocumentStrings = (List<Document>) getPdfDocuments(currentSalesOrder.Type_of_Order__c, currentSalesOrder.Service_Request__c);
+            List<Document> pdfDocumentStrings = (List<Document>) getPdfDocuments(currentSalesOrder.Type_of_Order__c, currentSalesOrder.Service_Request__r.ServiceRequestNumber__c);
             
-            List<ContentVersion> cvs = createContentVersion(pdfDocumentStrings);
-            
-            List<Database.UpsertResult> createResults = Database.upsert(cvs, false);
-            
+           List<ContentVersion> cvs = createContentVersion(pdfDocumentStrings);
+
+
+             List<Database.UpsertResult> createResults = Database.upsert(cvs, false);
+//
             List<ContentDocumentLink> cdl = createContentDocumentLinks(recordId, createResults);
-            
+//
             List<Database.UpsertResult> createCLResults = Database.upsert(cdl, false);
-            System.debug(createCLResults);
+
             for(Database.UpsertResult result : createCLResults ) {
-                
+
                 if (result.isSuccess() == false) {
                     return false;
                 }
@@ -38,8 +39,8 @@ public virtual class DownloadPDF {
             System.debug(e.getMessage());
             return false;
         }
-
-
+//
+//
 
     }
 
@@ -86,7 +87,8 @@ public virtual class DownloadPDF {
         } else if (SalesOrderType == SALES_ORDER_MEASURE){
             SRType = PDF_TYPE_ASSESS;
         }
-
+        System.debug(SRType);
+        System.debug(SRId);
         LiveLink__mdt liveLinkEndpoint = [SELECT Endpoint__c FROM LiveLink__mdt WHERE DeveloperName = 'LumberLiveLink' LIMIT 1];
         Http http = new Http();
         HttpRequest request = new HttpRequest();
