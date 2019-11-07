@@ -85,6 +85,14 @@
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="DownloadPDFMock" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="DownloadPDFTest" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="ForgotPasswordController" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
@@ -146,18 +154,18 @@
                             <option name="name" value="RTS_Portal_FileDownload_Test" />
                           </MetadataEntry>
                           <MetadataEntry>
-                            <option name="name" value="RTS_Portal_ManageUsersView_Ctlr" />
-                            <option name="selected" value="true" />
-                          </MetadataEntry>
-                          <MetadataEntry>
-                            <option name="name" value="RTS_Portal_ManageUsersView_Test" />
-                          </MetadataEntry>
-                          <MetadataEntry>
                             <option name="name" value="RTS_Portal_ManageUsers_Ctlr" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="RTS_Portal_ManageUsers_Test" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="RTS_Portal_ManageUsersView_Ctlr" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="RTS_Portal_ManageUsersView_Test" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="RTS_Portal_SalesOrderFileUpload" />
@@ -232,10 +240,6 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="VendorDataTest" />
-                            <option name="selected" value="true" />
-                          </MetadataEntry>
-                          <MetadataEntry>
-                            <option name="name" value="testStringClass" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>

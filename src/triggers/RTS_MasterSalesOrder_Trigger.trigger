@@ -6,9 +6,40 @@ trigger RTS_MasterSalesOrder_Trigger on Sales_Order__c (
         if (Trigger.isBefore) {
             if (Trigger.isInsert) {
                 // Call class logic here!
+
+                Map<String, User> userMapping = new Map<String, User>();
+                List<User> userList = [SELECT Id, Vendor_Number__c FROM User WHERE Vendor_Number__c != NULL];
+                for (User u : userList){
+                    userMapping.put(u.Vendor_Number__c, u);
+                }
+                System.debug(userMapping);
+                System.debug(Trigger.new);
+                for (Sales_Order__c so : Trigger.new) {
+
+                    If (so.VNumber__c != null) {
+                        so.Assigned__c = userMapping.get(so.VNumber__c).Id;
+                    }
+                }
             } 
             if (Trigger.isUpdate) {
+
                 // Call class logic here!
+                for (Sales_Order__c so : Trigger.new){
+                    if(so.Name != so.SalesOrderNumber__c){
+                        so.Name = so.SalesOrderNumber__c;
+                    }
+                }
+                Map<String, User> userMap = new Map<String, User>();
+                List<User>  userList = [SELECT Id, Vendor_Number__c FROM User WHERE Vendor_Number__c != NULL];
+                for (User us : userList){
+                    userMap.put(us.Vendor_Number__c, us);
+                }
+                for (Sales_Order__c so : Trigger.new){
+                    if(so.VNumber__c != null){
+                        so.Assigned__c = userMap.get(so.VNumber__c).Id;
+                    }
+                }
+
             }
             if (Trigger.isDelete) {
                 // Call class logic here!

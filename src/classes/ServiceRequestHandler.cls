@@ -101,6 +101,7 @@ public with sharing class ServiceRequestHandler {
             serviceRequest.ServiceRequestNumber__c = header.ServiceRequestNumber;
             serviceRequest.Status__c = header.Status;
             serviceRequest.CreationDate__c = header.CreationDate;
+            serviceRequest.Name = header.ServiceRequestNumber;
 
             // Link the ServiceRequest to a Store based on StoreNumber
             if (!String.isBlank(header.StoreNumber)) {
@@ -336,6 +337,7 @@ public with sharing class ServiceRequestHandler {
                 orderInfo.OrderType__c = srSalesOrderInfo.OrderType;
                 orderInfo.Service_Request__c = serviceRequest.Id;
                 orderInfo.EstimatedIPPayout__c = srSalesOrderInfo.EstimatedIPPayout;
+                orderInfo.Name = srSalesOrderInfo.OrderNumber;
 
                 if (srSalesOrderInfo.OrderType.containsIgnoreCase('install')) {
                     orderInfo.RecordTypeId = installOrderRecordId;
@@ -378,12 +380,12 @@ public with sharing class ServiceRequestHandler {
             if (!salesOrdersValid(requestDetails.Sales_Order_Info, log)) {
                 requestValid = false;
             }
-//            List<User> activeUsers = [SELECT Id, Vendor_Number__c FROM User WHERE Vendor_Number__c = :requestDetails.Header.VendorNumber AND IsActive = true];
-//
-//            if (activeUsers.size() == 0){
-//                log.add('No Active User for this Vendor');
-//                requestValid = false;
-//            }
+            List<User> activeUsers = [SELECT Id, Vendor_Number__c FROM User WHERE Vendor_Number__c = :requestDetails.Header.VendorNumber AND IsActive = true];
+
+            if (activeUsers.size() == 0){
+                log.add('No Active User for this Vendor');
+                requestValid = false;
+            }
 
 
             return requestValid;

@@ -13,6 +13,7 @@ public with sharing class VendorDataHandler {
     //private static final String COMMUNITY_PROFILE = 'Installer Community Plus User';
     //private static final String COMMUNITY_PERMISSION_SET = 'Installer_Primary_Admin_Portal_Permissions';
    // private static final String USERNAME_SUFFIX = '.SOAPSERV';
+    private static final String CONTACT_RECORDTYPE = 'Installer';
 
     public List<VendorDataService.VendorDataResponse> handle(List<VendorDataService.VendorData> vendorDetails) {
 
@@ -287,6 +288,9 @@ public with sharing class VendorDataHandler {
 
 
     private static void copyDataToContact(Account vendorAccount, Contact vendorContact) {
+
+
+
         vendorContact.AccountId = vendorAccount.Id;
 
         vendorContact.LastName = vendorAccount.Name;
@@ -302,6 +306,7 @@ public with sharing class VendorDataHandler {
         vendorContact.Email = vendorAccount.EmailAddress__c;
 
         vendorContact.Status__c = vendorAccount.Status__c;
+        vendorContact.RecordType = [SELECT Id FROM RecordType WHERE Name = :CONTACT_RECORDTYPE];
     }
 
 
@@ -376,7 +381,7 @@ public with sharing class VendorDataHandler {
         ];
 
 
-        VendorDataHandler__mdt vendorData = [SELECT DeveloperName, Community_Permission_Set__c, Community_Profile__c FROM VendorDataHandler__mdt WHERE DeveloperName = 'VendorServiceVars' LIMIT 1];
+        VendorDataHandler__mdt vendorData = [SELECT DeveloperName, Community_Permission_Set__c, Community_Profile__c, User_Suffix__c FROM VendorDataHandler__mdt WHERE DeveloperName = 'VendorServiceVars' LIMIT 1];
 
         // Cache the Id for the PermissionSet and Profile for Users
         Id communityPermissionSetId = [SELECT Id FROM PermissionSet WHERE Name = :vendorData.Community_Permission_Set__c LIMIT 1].Id;

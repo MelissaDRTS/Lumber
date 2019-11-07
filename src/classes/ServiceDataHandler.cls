@@ -59,7 +59,7 @@ public without sharing class ServiceDataHandler {
 
                 response.serviceRequestNumber = sr.ServiceRequestNumber__c;
                 response.measureSchedule = sr.Measure_Scheduled__c;
-                response.installationScheduled = sr.Installation_Completed__c;
+                response.installationScheduled = sr.Installation_Scheduled__c;
                 response.estimationCompleted = sr.Estimated_Completion__c;
                 response.installationCompleted = sr.Installation_Completed__c;
                 response.measurementRequestReceived = sr.MeasurementsReceived__c;

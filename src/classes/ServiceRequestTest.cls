@@ -6,6 +6,8 @@
 
 @IsTest
 private class ServiceRequestTest {
+    private static final String COMMUNITY_PROFILE = 'Installer Community Plus User';
+    private static final String COMMUNITY_PERMISSION_SET = 'Installer_Primary_Admin_Portal_Permissions';
 
     // Test 0
     @IsTest
@@ -22,6 +24,39 @@ private class ServiceRequestTest {
     // Test 1
     @IsTest
     static void testSingleSR() {
+        Id communityProfileId = [SELECT Id FROM Profile WHERE Name = :COMMUNITY_PROFILE LIMIT 1].Id;
+
+
+        Contact testContact = new Contact();
+            testContact.LastName = 'Test User';
+            testContact.Vendor_Number__c = '9999';
+        insert testContact;
+
+
+        User testUsr = new User(
+                LastName = 'Test User',
+                Vendor_Number__c = '9999',
+                Alias = 'test',
+                Email = 'mail@user.com',
+                Username = 'mail@user.com.lumber',
+                CommunityNickname = 'UT',
+                LocaleSidKey = 'en_US',
+                TimeZoneSidKey = 'America/New_York',
+                ProfileId = communityProfileId,
+                LanguageLocaleKey = 'en_US',
+                EmailEncodingKey = 'UTF-8',
+                ContactId = testContact.Id
+        );
+
+        insert testUsr;
+
+
+
+
+
+
+
+
         ServiceRequest.Service_Request_Details srd = createServiceRequest();
         setupHeader(srd);
         setupNotes(srd, 1);
@@ -44,6 +79,7 @@ private class ServiceRequestTest {
                 SELECT Id, Customer_Number__c, FirstName, LastName, MailingStreet, MailingCity, MailingState, MailingCountry, MailingPostalCode, Phone
                 FROM Contact
         ][0];
+
         System.assertNotEquals(null, customer);
         System.assertEquals(srd.Customer_Info.CustomerNumber, customer.Customer_Number__c);
         System.assertEquals(srd.Customer_Info.CustomerName, customer.FirstName + ' ' + customer.LastName);
