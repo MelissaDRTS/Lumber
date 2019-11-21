@@ -26,9 +26,14 @@ public without sharing class ServiceDataHandler {
 
 
     private List<Service_Request__c> getServiceRequests(Datetime startDatetime, Datetime endDatetime) {
+        //For EST Input
+        //Datetime dtStart = startDatetime.addHours(4);
+        //Datetime dtEnd = endDatetime.addHours(4);
 
-        Datetime dtStart = startDatetime.addHours(4);
-        Datetime dtEnd = endDatetime.addHours(4);
+
+        //For UTC Input
+        Datetime dtStart = startDatetime;
+        Datetime dtEnd = endDatetime;
 
 
         return [
@@ -40,13 +45,13 @@ public without sharing class ServiceDataHandler {
                         Estimated_Completion__c,
                         Installation_Completed__c,
                         MeasurementsReceived__c,
-                        SystemModStamp
+                        LastModifiedDate
                 FROM
                         Service_Request__c
                 WHERE
-                SystemModstamp >= :dtStart
+                LastModifiedDate >= :dtStart
                 AND
-                SystemModstamp <= :dtEnd
+                LastModifiedDate <= :dtEnd
         ];
 
     }

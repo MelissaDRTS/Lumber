@@ -158,4 +158,32 @@ private class VendorDataTest {
         Test.stopTest();
 
     }
+
+    @isTest
+    static void userCreated(){
+        List<VendorDataService.VendorData> newVendors = new List<VendorDataService.VendorData>();
+
+        VendorDataService.VendorData tvd1 = new VendorDataService.VendorData();
+        tvd1.vendorName = 'TEST NAME';
+        tvd1.vendorNumber = '1233';
+        tvd1.emailAddress = 'goodEmail@gmail.com';
+        tvd1.status = 'Active';
+        tvd1.street = '123 Main Street';
+        tvd1.city = 'Richmond';
+        tvd1.state = 'VA';
+        tvd1.country ='USA';
+        tvd1.zipCode = '23229';
+        tvd1.phoneNumber = '804-555-1234';
+
+        newVendors.add(tvd1);
+
+        Test.startTest();
+        VendorDataService.updateVendorData(newVendors);
+        Test.stopTest();
+        List<User> u = [SELECT Id, Name, Vendor_Number__c FROM User WHERE Vendor_Number__c = :tvd1.vendorNumber];
+
+        System.assertNotEquals(0, u.size());
+
+
+    }
 }

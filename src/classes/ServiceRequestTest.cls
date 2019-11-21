@@ -6,8 +6,6 @@
 
 @IsTest
 private class ServiceRequestTest {
-    private static final String COMMUNITY_PROFILE = 'Installer Community Plus User';
-    private static final String COMMUNITY_PERMISSION_SET = 'Installer_Primary_Admin_Portal_Permissions';
 
     // Test 0
     @IsTest
@@ -24,39 +22,31 @@ private class ServiceRequestTest {
     // Test 1
     @IsTest
     static void testSingleSR() {
-        Id communityProfileId = [SELECT Id FROM Profile WHERE Name = :COMMUNITY_PROFILE LIMIT 1].Id;
 
 
-        Contact testContact = new Contact();
-            testContact.LastName = 'Test User';
-            testContact.Vendor_Number__c = '9999';
-        insert testContact;
+        Account a = new Account(Name = 'Test Account Name', VendorNumber__c='9999');
+        insert a;
 
+        Contact c = new Contact(LastName = 'Contact Last Name', AccountId = a.id);
+        insert c;
 
-        User testUsr = new User(
-                LastName = 'Test User',
-                Vendor_Number__c = '9999',
-                Alias = 'test',
-                Email = 'mail@user.com',
-                Username = 'mail@user.com.lumber',
-                CommunityNickname = 'UT',
-                LocaleSidKey = 'en_US',
-                TimeZoneSidKey = 'America/New_York',
-                ProfileId = communityProfileId,
-                LanguageLocaleKey = 'en_US',
-                EmailEncodingKey = 'UTF-8',
-                ContactId = testContact.Id
-        );
+        User user = new User();
+        user.ProfileID = [Select Id From Profile Where Name = 'Installer Community Plus User'].id;
+        user.EmailEncodingKey = 'ISO-8859-1';
+        user.LanguageLocaleKey = 'en_US';
+        user.TimeZoneSidKey = 'America/New_York';
+        user.LocaleSidKey = 'en_US';
+        user.FirstName = 'first';
+        user.LastName = 'last';
+        user.Username = 'test@domain.com';
+        user.CommunityNickname = 'testUser123';
+        user.Alias = 't1';
+        user.Email = 'no@email.com';
+        user.IsActive = true;
+        user.ContactId = c.Id;
+        user.Vendor_Number__c = '9999';
 
-        insert testUsr;
-
-
-
-
-
-
-
-
+        insert user;
         ServiceRequest.Service_Request_Details srd = createServiceRequest();
         setupHeader(srd);
         setupNotes(srd, 1);
@@ -65,41 +55,48 @@ private class ServiceRequestTest {
         setupShipTo(srd);
         setupSalesOrder(srd);
 
-        Test.startTest();
-        String results = ServiceRequest.serviceRequest(srd);
-        Test.stopTest();
+        String results;
 
-        System.assert(results.contains('Created or Updated Service_Request__c'));
+        //System.RunAs(user) {
 
-        Service_Request__c serviceRequest = [SELECT Id FROM Service_Request__c][0];
-        System.assertNotEquals(null, serviceRequest);
 
-        // Verify the customer was created
-        Contact customer = [
-                SELECT Id, Customer_Number__c, FirstName, LastName, MailingStreet, MailingCity, MailingState, MailingCountry, MailingPostalCode, Phone
-                FROM Contact
-        ][0];
+            Test.startTest();
+            results = ServiceRequest.serviceRequest(srd);
+            Test.stopTest();
+            System.debug(results);
 
-        System.assertNotEquals(null, customer);
-        System.assertEquals(srd.Customer_Info.CustomerNumber, customer.Customer_Number__c);
-        System.assertEquals(srd.Customer_Info.CustomerName, customer.FirstName + ' ' + customer.LastName);
-        System.assertEquals(srd.Customer_Info.Street, customer.MailingStreet);
-        System.assertEquals(srd.Customer_Info.City, customer.MailingCity);
-        System.assertEquals(srd.Customer_Info.State, customer.MailingState);
-        System.assertEquals(srd.Customer_Info.Country, customer.MailingCountry);
-        System.assertEquals(srd.Customer_Info.ZipCode, customer.MailingPostalCode);
-        System.assertEquals(srd.Customer_Info.Phone, customer.Phone);
+        //}
+            System.assert(results.contains('Created or Updated Service_Request__c'));
 
-        List<ContentDocumentLink> docLinks = [SELECT Id, ContentDocumentId FROM ContentDocumentLink WHERE LinkedEntityId = :serviceRequest.Id];
-        Set<Id> docIds = new Set<Id>();
-        for(ContentDocumentLink cdl : docLinks){
-            docIds.add(cdl.ContentDocumentId);
-        }
-        List<ContentNote> contentNotes = [SELECT Id FROM ContentNote WHERE Id IN :docIds];
-        System.assertNotEquals(null, contentNotes);
-        System.assertEquals(1, contentNotes.size());
+            Service_Request__c serviceRequest = [SELECT Id FROM Service_Request__c][0];
+            System.assertNotEquals(null, serviceRequest);
+
+            // Verify the customer was created
+            Contact customer = [
+                    SELECT Id, Customer_Number__c, FirstName, LastName, MailingStreet, MailingCity, MailingState, MailingCountry, MailingPostalCode, Phone
+                    FROM Contact WHERE Customer_Number__c = '99'
+            ][0];
+
+            System.assertNotEquals(null, customer);
+            System.assertEquals(srd.Customer_Info.CustomerNumber, customer.Customer_Number__c);
+            System.assertEquals(srd.Customer_Info.CustomerName, customer.FirstName + ' ' + customer.LastName);
+            System.assertEquals(srd.Customer_Info.Street, customer.MailingStreet);
+            System.assertEquals(srd.Customer_Info.City, customer.MailingCity);
+            System.assertEquals(srd.Customer_Info.State, customer.MailingState);
+            System.assertEquals(srd.Customer_Info.Country, customer.MailingCountry);
+            System.assertEquals(srd.Customer_Info.ZipCode, customer.MailingPostalCode);
+            System.assertEquals(srd.Customer_Info.Phone, customer.Phone);
+
+            List<ContentDocumentLink> docLinks = [SELECT Id, ContentDocumentId FROM ContentDocumentLink WHERE LinkedEntityId = :serviceRequest.Id];
+            Set<Id> docIds = new Set<Id>();
+            for (ContentDocumentLink cdl : docLinks) {
+                docIds.add(cdl.ContentDocumentId);
+            }
+            List<ContentNote> contentNotes = [SELECT Id FROM ContentNote WHERE Id IN :docIds];
+            System.assertNotEquals(null, contentNotes);
+            System.assertEquals(1, contentNotes.size());
+
     }
-
     private static ServiceRequest.Service_Request_Details createServiceRequest() {
         ServiceRequest.Service_Request_Details srd = new ServiceRequest.Service_Request_Details();
         srd.Milestone_Dates = new ServiceRequest.Milestone_Date();
@@ -169,6 +166,7 @@ private class ServiceRequestTest {
         ci.Country = 'US';
         ci.ZipCode = '23233';
         ci.Phone = '8045555555';
+
     }
 
     private static void setupShipTo(ServiceRequest.Service_Request_Details srd) {
@@ -195,6 +193,31 @@ private class ServiceRequestTest {
     @IsTest
 
     static void testManySR() {
+
+        Account a = new Account(Name = 'Test Account Name', VendorNumber__c='9999');
+        insert a;
+
+        Contact c = new Contact(LastName = 'Contact Last Name', AccountId = a.id);
+        insert c;
+
+        User user = new User();
+        user.ProfileID = [Select Id From Profile Where Name = 'Installer Community Plus User'].id;
+        user.EmailEncodingKey = 'ISO-8859-1';
+        user.LanguageLocaleKey = 'en_US';
+        user.TimeZoneSidKey = 'America/New_York';
+        user.LocaleSidKey = 'en_US';
+        user.FirstName = 'first';
+        user.LastName = 'last';
+        user.Username = 'test@domain.com';
+        user.CommunityNickname = 'testUser123';
+        user.Alias = 't1';
+        user.Email = 'no@email.com';
+        user.IsActive = true;
+        user.ContactId = c.Id;
+        user.Vendor_Number__c = '9999';
+
+        insert user;
+
         ServiceRequest.Service_Request_Details srd = createServiceRequest();
         setupHeader(srd);
         setupNotes(srd, 1);
@@ -221,7 +244,7 @@ private class ServiceRequestTest {
         // Verify the customer was created
         List<Contact> customers = [
                 SELECT Id, Customer_Number__c, FirstName, LastName, MailingStreet, MailingCity, MailingState, MailingCountry, MailingPostalCode, Phone
-                FROM Contact
+                FROM Contact WHERE Customer_Number__c = '99'
         ];
         System.assertNotEquals(null, customers);
         System.assertEquals(1, customers.size());
@@ -259,7 +282,7 @@ private class ServiceRequestTest {
         // Verify the customer was created
         customers = [
                 SELECT Id, Customer_Number__c, FirstName, LastName, MailingStreet, MailingCity, MailingState, MailingCountry, MailingPostalCode, Phone
-                FROM Contact
+                FROM Contact  WHERE Customer_Number__c = '99'
         ];
         System.assertNotEquals(null, customers);
         System.assertEquals(1, customers.size());

@@ -36,12 +36,27 @@ public with sharing class DocumentServiceHandler {
     // Get list of ContentDocumentLinks from ServiceRequest__c.  These are the attached files from Service Request
     // Data in list:  ContentDocumentId (to get VersionData: base64), LinkedEntityId (ServiceRequest Id), SystemModStamp, Title of Document
     // Parse list to only include Signed documents
-
+    /**
+     *
+     *
+     *
+     * @param startTime
+     * @param endTime
+     *
+     * @return
+     */
     private List<ContentDocumentLink> getContentDocumentLinks(Datetime startTime, Datetime endTime){
-        Datetime tzStartTime = startTime.addHours(4);
-        Datetime tzEndTime = endTime.addHours(4);
+       //For EST Time frame
+        // Datetime tzStartTime = startTime.addHours(4);
+        //Datetime tzEndTime = endTime.addHours(4);
 
-       return [
+        //For UTC Time frame
+        Datetime tzStartTime = startTime;
+        Datetime tzEndTime = endTime;
+
+
+
+        return [
                 SELECT Id, LinkedEntityId, ContentDocumentId, ContentDocument.Title, ContentDocument.SystemModstamp
                 FROM ContentDocumentLink
                 WHERE LinkedEntityId IN (SELECT Id FROM Service_Request__c)
