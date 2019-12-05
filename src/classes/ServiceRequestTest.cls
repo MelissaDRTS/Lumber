@@ -241,7 +241,7 @@ private class ServiceRequestTest {
         srd2.Milestone_Dates.InstallationScheduled = Date.valueOf('1800-01-01');
         srd2.Milestone_Dates.EstimatedCompletion = Date.valueOf('1800-01-01');
         srd2.Milestone_Dates.Pre_CallMade = Date.valueOf('1800-01-01');
-        srd2.Milestone_Dates.InstallationCompleted = Date.valueOf('1800-01-016');
+        srd2.Milestone_Dates.InstallationCompleted = Date.valueOf('1800-01-01');
         srd2.Milestone_Dates.Post_CallMade = Date.valueOf('1800-01-01');
         srd2.Milestone_Dates.PGI_Invoiced = Date.valueOf('1800-01-01');
         srd2.Milestone_Dates.Cancellation = Date.valueOf('1800-01-01');
