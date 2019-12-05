@@ -88,6 +88,7 @@ public with sharing class VendorDataHandler {
                     vendorNumberMapping.put(vd.vendorNumber, currentVendor);
                 }
 
+
                 currentVendor.VendorNumber__c = vd.vendorNumber;
                 currentVendor.Name = vd.vendorName;
 

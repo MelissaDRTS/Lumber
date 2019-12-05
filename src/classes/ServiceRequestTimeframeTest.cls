@@ -7,87 +7,6 @@
 
 @IsTest
 private class ServiceRequestTimeframeTest {
-//    @TestSetup
-//    static void testTerster() {
-//
-//
-//        Account a = new Account(Name='Test Account Name');
-//        insert a;
-//
-//        Contact tc = new Contact(LastName = 'Contact Last Name', AccountId = a.id);
-//        insert tc;
-//
-//        User user = new User();
-//        user.ProfileID = [Select Id From Profile Where Name='Installer Community Plus User'].id;
-//        user.EmailEncodingKey = 'ISO-8859-1';
-//        user.LanguageLocaleKey = 'en_US';
-//        user.TimeZoneSidKey = 'America/New_York';
-//        user.LocaleSidKey = 'en_US';
-//        user.FirstName = 'first';
-//        user.LastName = 'last';
-//        user.Username = 'test@domain.com';
-//        user.CommunityNickname = 'testUser123';
-//        user.Alias = 't1';
-//        user.Email = 'no@email.com';
-//        user.IsActive = true;
-//        user.ContactId = tc.Id;
-//
-//        insert user;
-//
-//        System.RunAs(user) {
-//            // do all of my tests
-//
-//            Contact c = new Contact(LastName = 'Test Contact', Vendor_Number__c = '9999');
-//
-//            insert c;
-//
-//
-//            Id usrProfile = [SELECT Id, name FROM Profile WHERE Name = 'Installer Community Plus User' LIMIT 1].Id;
-//            User duUsr = [SELECT Id from User WHERE LastName = 'RTS Labs' Limit 1];
-//
-//            System.RunAs(duUsr) {
-//                User u = new User(
-//                        LastName = 'Test',
-//                        Vendor_Number__c = '9999',
-//                        Email = 'test@email.com',
-//                        Alias = 'test',
-//                        LocaleSidKey = 'en_US',
-//                        TimeZoneSidKey = 'America/New_York',
-//                        LanguageLocaleKey = 'en_US',
-//                        EmailEncodingKey = 'ISO-8859-1',
-//                        ProfileId = usrProfile,
-//                        ContactId = c.Id,
-//                        Username = 'test999@lumberTest.com',
-//                        CommunityNickname = 'nickCom',
-//                        isActive = true
-//                );
-//                insert u;
-//
-//
-//                Id communityPermissionSetId = [SELECT Id FROM PermissionSet WHERE Name = 'Installer_Primary_Admin_Portal_Permissions' LIMIT 1].Id;
-//
-//                List<PermissionSetAssignment> newAssignments = new List<PermissionSetAssignment>();
-//
-//                newAssignments.add(new PermissionSetAssignment(
-//                        AssigneeId = u.Id,
-//                        PermissionSetId = communityPermissionSetId
-//                ));
-//
-//                insert newAssignments;
-//
-//            }
-//
-//        }
-//        ServiceRequest.Service_Request_Details srd = createServiceRequest();
-//        setupHeader(srd);
-//        setupNotes(srd, 1);
-//        setupMilestonesBlank(srd);
-//        setupCustomerInfo(srd);
-//        setupShipTo(srd);
-//        setupSalesOrder(srd);
-//
-//        ServiceRequest.serviceRequest(srd);
-//    }
 //
 
     @IsTest
@@ -119,8 +38,8 @@ private class ServiceRequestTimeframeTest {
 
         Test.startTest();
         ServiceRequestTimeframeService.ServiceRequestDates srd = new ServiceRequestTimeframeService.ServiceRequestDates();
-        srd.startDateTime = System.now().addMinutes(-60);
-        srd.endDateTime = System.now().addMinutes(-55);
+        srd.startDateTime = System.now().addMinutes(-5);
+        srd.endDateTime = System.now().addMinutes(5);
 
         ServiceRequestTimeframeService.ServiceRequestResponse results = ServiceRequestTimeframeService.getServiceRequestResponses(srd);
         Test.stopTest();
@@ -130,7 +49,7 @@ private class ServiceRequestTimeframeTest {
         System.assertEquals(1, results.errors.size());
     }
 
-        //}
+
     @IsTest
     static void testOne() {
 
@@ -167,9 +86,9 @@ private class ServiceRequestTimeframeTest {
 
 
         Test.startTest();
+        ServiceRequest.serviceRequest(srd);
         List<Service_Request__c> srTest = [SELECT Id, Name FROM Service_Request__c];
 
-        System.debug(srTest);
         ServiceRequestTimeframeService.ServiceRequestDates srdtfDates = new ServiceRequestTimeframeService.ServiceRequestDates();
             srdtfDates.startDateTime = System.now().addMinutes(-60);
             srdtfDates.endDateTime = System.now().addMinutes(60);

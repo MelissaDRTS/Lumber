@@ -98,6 +98,8 @@ public with sharing class ServiceRequestHandler {
 
     private class HeaderHandler {
         private void handle(ServiceRequest.Service_Request_Header header, Service_Request__c serviceRequest) {
+            Date nullDatetimeValue = [SELECT Null_Date__c FROM Service_Request_Setting__mdt].Null_Date__c;
+
             serviceRequest.ServiceRequestNumber__c = header.ServiceRequestNumber;
             serviceRequest.Status__c = header.Status;
             serviceRequest.CreationDate__c = header.CreationDate;
@@ -127,7 +129,7 @@ public with sharing class ServiceRequestHandler {
             }
 
             if (header.JobScheduleDate != null) {
-                serviceRequest.JobScheduleDate__c = header.JobScheduleDate;
+                serviceRequest.JobScheduleDate__c = (header.JobScheduleDate == nullDatetimeValue ? null : header.JobScheduleDate);
             }
         }
     }
@@ -156,7 +158,8 @@ public with sharing class ServiceRequestHandler {
             List<ContentNote> newNotes = new List<ContentNote>();
             for (ServiceRequest.Note srNote : srNotes) {
                 ContentNote newNote = new ContentNote(
-                        Title = 'Note: ' + srNote.noteDate + ' : ' + srNote.noteTime,
+                        //Title = 'Note: ' + srNote.noteDate + ' : ' + srNote.noteTime,
+                        Title = 'Service Request Note',
                         Content = Blob.valueOf(srNote.noteText.escapeHtml4())
                 );
 
@@ -190,64 +193,66 @@ public with sharing class ServiceRequestHandler {
 
     private class MilestoneDatesHandler {
         private void handle(ServiceRequest.Milestone_Date milestoneDates, Service_Request__c serviceRequest) {
+            Date nullDatetimeValue = [SELECT Null_Date__c FROM Service_Request_Setting__mdt].Null_Date__c;
+
+
             if (milestoneDates.MeasureRequestReceived != null) {
-                serviceRequest.MeasureRequestReceived__c = milestoneDates.MeasureRequestReceived;
+                serviceRequest.MeasureRequestReceived__c = (milestoneDates.MeasureRequestReceived == nullDatetimeValue ? null : milestoneDates.MeasureRequestReceived);
             }
 
             if (milestoneDates.MeasureRequestSent != null) {
-                serviceRequest.MeasureRequestSent__c = milestoneDates.MeasureRequestSent;
+                serviceRequest.MeasureRequestSent__c = (milestoneDates.MeasureRequestSent == nullDatetimeValue ? null : milestoneDates.MeasureRequestSent);
             }
 
             if (milestoneDates.MeasureScheduled != null) {
-                serviceRequest.Measure_Scheduled__c = milestoneDates.MeasureScheduled;
+                serviceRequest.Measure_Scheduled__c = (milestoneDates.MeasureScheduled == nullDatetimeValue ? null : milestoneDates.MeasureScheduled);
             }
 
             if (milestoneDates.MeasurementsReceived != null) {
-                serviceRequest.MeasurementsReceived__c = milestoneDates.MeasurementsReceived;
+                serviceRequest.MeasurementsReceived__c = (milestoneDates.MeasurementsReceived == nullDatetimeValue ? null : milestoneDates.MeasurementsReceived);
             }
 
             if (milestoneDates.QuoteBuilt != null) {
-                serviceRequest.QuoteBuilt__c = milestoneDates.QuoteBuilt;
+                serviceRequest.QuoteBuilt__c = (milestoneDates.QuoteBuilt == nullDatetimeValue ? null : milestoneDates.QuoteBuilt);
             }
-
             if (milestoneDates.InstallationSold != null) {
-                serviceRequest.InstallationSold__c = milestoneDates.InstallationSold;
+                serviceRequest.InstallationSold__c = (milestoneDates.InstallationSold == nullDatetimeValue ? null : milestoneDates.InstallationSold);
             }
 
             if (milestoneDates.ThankYouCall != null) {
-                serviceRequest.ThankYouCall__c = milestoneDates.ThankYouCall;
+                serviceRequest.ThankYouCall__c = (milestoneDates.ThankYouCall == nullDatetimeValue ? null : milestoneDates.ThankYouCall);
             }
 
             if (milestoneDates.InstallationPaperworkSent != null) {
-                serviceRequest.InstallationPaperworkSent__c = milestoneDates.InstallationPaperworkSent;
+                serviceRequest.InstallationPaperworkSent__c = (milestoneDates.InstallationPaperworkSent == nullDatetimeValue ? null : milestoneDates.InstallationPaperworkSent);
             }
 
             if (milestoneDates.InstallationScheduled != null) {
-                serviceRequest.Installation_Scheduled__c = milestoneDates.InstallationScheduled;
+                serviceRequest.Installation_Scheduled__c = (milestoneDates.InstallationScheduled == nullDatetimeValue ? null : milestoneDates.InstallationScheduled);
             }
 
             if (milestoneDates.EstimatedCompletion != null) {
-                serviceRequest.Estimated_Completion__c = milestoneDates.EstimatedCompletion;
+                serviceRequest.Estimated_Completion__c = (milestoneDates.EstimatedCompletion == nullDatetimeValue ? null : milestoneDates.EstimatedCompletion);
             }
 
             if (milestoneDates.Pre_CallMade != null) {
-                serviceRequest.Pre_CallMade__c = milestoneDates.Pre_CallMade;
+                serviceRequest.Pre_CallMade__c = (milestoneDates.Pre_CallMade == nullDatetimeValue ? null : milestoneDates.Pre_CallMade);
             }
 
             if (milestoneDates.InstallationCompleted != null) {
-                serviceRequest.Installation_Completed__c = milestoneDates.InstallationCompleted;
+                serviceRequest.Installation_Completed__c = (milestoneDates.InstallationCompleted == nullDatetimeValue ? null : milestoneDates.InstallationCompleted);
             }
 
             if (milestoneDates.Post_CallMade != null) {
-                serviceRequest.Post_CallMade__c = milestoneDates.Post_CallMade;
+                serviceRequest.Post_CallMade__c = (milestoneDates.Post_CallMade == nullDatetimeValue ? null : milestoneDates.Pre_CallMade);
             }
 
             if (milestoneDates.PGI_Invoiced != null) {
-                serviceRequest.PGI_Invoiced__c = milestoneDates.PGI_Invoiced;
+                serviceRequest.PGI_Invoiced__c = (milestoneDates.PGI_Invoiced == nullDatetimeValue ? null : milestoneDates.PGI_Invoiced);
             }
 
             if (milestoneDates.Cancellation != null) {
-                serviceRequest.Cancellation__c = milestoneDates.Cancellation;
+                serviceRequest.Cancellation__c = (milestoneDates.Cancellation == nullDatetimeValue ? null : milestoneDates.Cancellation);
             }
         }
     }

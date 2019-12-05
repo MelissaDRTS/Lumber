@@ -228,8 +228,23 @@ private class ServiceRequestTest {
 
         ServiceRequest.Service_Request_Details srd2 = createServiceRequest();
         setupHeader(srd2);
-        setupNotes(srd2, 4);
+        setupNotes(srd2, 3);
         setupMilestonesFilled(srd2);
+        srd2.Milestone_Dates.MeasureRequestReceived = Date.valueOf('1800-01-01');
+        srd2.Milestone_Dates.MeasureRequestSent = Date.valueOf('1800-01-01');
+        srd2.Milestone_Dates.MeasureScheduled = Date.valueOf('1800-01-01');
+        srd2.Milestone_Dates.MeasurementsReceived = Date.valueOf('1800-01-01');
+        srd2.Milestone_Dates.QuoteBuilt = Date.valueOf('1800-01-01');
+        srd2.Milestone_Dates.InstallationSold = Date.valueOf('1800-01-01');
+        srd2.Milestone_Dates.ThankYouCall = Date.valueOf('1800-01-01');
+        srd2.Milestone_Dates.InstallationPaperworkSent = Date.valueOf('1800-01-01');
+        srd2.Milestone_Dates.InstallationScheduled = Date.valueOf('1800-01-01');
+        srd2.Milestone_Dates.EstimatedCompletion = Date.valueOf('1800-01-01');
+        srd2.Milestone_Dates.Pre_CallMade = Date.valueOf('1800-01-01');
+        srd2.Milestone_Dates.InstallationCompleted = Date.valueOf('1800-01-016');
+        srd2.Milestone_Dates.Post_CallMade = Date.valueOf('1800-01-01');
+        srd2.Milestone_Dates.PGI_Invoiced = Date.valueOf('1800-01-01');
+        srd2.Milestone_Dates.Cancellation = Date.valueOf('1800-01-01');
         setupCustomerInfo(srd2);
         setupShipTo(srd2);
         setupSalesOrder(srd2);
@@ -271,11 +286,12 @@ private class ServiceRequestTest {
 
         results = ServiceRequest.serviceRequest(srd2);
         System.assert(results.contains('Created or Updated Service_Request__c'));
+
         Test.stopTest();
 
 
 
-        serviceRequests = [SELECT Id FROM Service_Request__c];
+        serviceRequests = [SELECT Id, MeasureRequestReceived__c, MeasurementsReceived__c, Measure_Scheduled__c, MeasureRequestSent__c, QuoteBuilt__c, InstallationSold__c, Installation_Completed__c, InstallationPaperworkSent__c, Estimated_Completion__c, PGI_Invoiced__c, Pre_CallMade__c, Post_CallMade__c, Cancellation__c FROM Service_Request__c];
         System.assertNotEquals(null, serviceRequests);
         System.assertEquals(1, serviceRequests.size());
 
@@ -296,6 +312,23 @@ private class ServiceRequestTest {
         System.assertEquals(srd2.Customer_Info.Country, customer.MailingCountry);
         System.assertEquals(srd2.Customer_Info.ZipCode, customer.MailingPostalCode);
         System.assertEquals(srd2.Customer_Info.Phone, customer.Phone);
+
+
+        Service_Request__c serviceRequest = serviceRequests[0];
+        System.assertEquals(null, serviceRequest.MeasureRequestReceived__c);
+        System.assertEquals(null, serviceRequest.MeasurementsReceived__c);
+        System.assertEquals(null, serviceRequest.Measure_Scheduled__c);
+        System.assertEquals(null, serviceRequest.MeasureRequestSent__c);
+        System.assertEquals(null, serviceRequest.QuoteBuilt__c);
+        System.assertEquals(null, serviceRequest.InstallationSold__c);
+        System.assertEquals(null, serviceRequest.Installation_Completed__c);
+        System.assertEquals(null, serviceRequest.InstallationPaperworkSent__c);
+        System.assertEquals(null, serviceRequest.Estimated_Completion__c);
+        System.assertEquals(null, serviceRequest.PGI_Invoiced__c);
+        System.assertEquals(null, serviceRequest.Pre_CallMade__c);
+        System.assertEquals(null, serviceRequest.Post_CallMade__c);
+        System.assertEquals(null, serviceRequest.Cancellation__c);
+
 
 
         docLinks = [SELECT Id, ContentDocumentId FROM ContentDocumentLink WHERE LinkedEntityId = :serviceRequests[0].Id];
