@@ -127,6 +127,9 @@ public with sharing class ServiceRequestHandler {
             if(sUser.size() > 0 && sUser[0] !=null){
                 serviceRequest.Community_User__c = sUser[0].Id;
             }
+            else {
+                serviceRequest.Community_User__c = null;
+            }
 
             if (header.JobScheduleDate != null) {
                 serviceRequest.JobScheduleDate__c = (header.JobScheduleDate == nullDatetimeValue ? null : header.JobScheduleDate);
@@ -244,7 +247,7 @@ public with sharing class ServiceRequestHandler {
             }
 
             if (milestoneDates.Post_CallMade != null) {
-                serviceRequest.Post_CallMade__c = (milestoneDates.Post_CallMade == nullDatetimeValue ? null : milestoneDates.Pre_CallMade);
+                serviceRequest.Post_CallMade__c = (milestoneDates.Post_CallMade == nullDatetimeValue ? null : milestoneDates.Post_CallMade);
             }
 
             if (milestoneDates.PGI_Invoiced != null) {
@@ -385,12 +388,12 @@ public with sharing class ServiceRequestHandler {
             if (!salesOrdersValid(requestDetails.Sales_Order_Info, log)) {
                 requestValid = false;
             }
-            List<User> activeUsers = [SELECT Id, Vendor_Number__c FROM User WHERE Vendor_Number__c = :requestDetails.Header.VendorNumber AND IsActive = true];
-
-            if (activeUsers.size() == 0){
-                log.add('No Active User for this Vendor');
-                requestValid = false;
-            }
+//            List<User> activeUsers = [SELECT Id, Vendor_Number__c FROM User WHERE Vendor_Number__c = :requestDetails.Header.VendorNumber AND IsActive = true];
+//
+//            if (activeUsers.size() == 0){
+//                log.add('No Active User for this Vendor');
+//                requestValid = false;
+//            }
 
 
             return requestValid;

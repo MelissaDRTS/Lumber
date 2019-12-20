@@ -19,13 +19,12 @@ public virtual class DownloadPDF {
             
             List<Document> pdfDocumentStrings = (List<Document>) getPdfDocuments(currentSalesOrder.Type_of_Order__c, currentSalesOrder.Service_Request__r.ServiceRequestNumber__c);
             
-           List<ContentVersion> cvs = createContentVersion(pdfDocumentStrings);
+            List<ContentVersion> cvs = createContentVersion(pdfDocumentStrings);
 
+            List<Database.UpsertResult> createResults = Database.upsert(cvs, false);
 
-             List<Database.UpsertResult> createResults = Database.upsert(cvs, false);
-//
             List<ContentDocumentLink> cdl = createContentDocumentLinks(recordId, createResults);
-//
+
             List<Database.UpsertResult> createCLResults = Database.upsert(cdl, false);
 
             for(Database.UpsertResult result : createCLResults ) {
@@ -155,10 +154,8 @@ public virtual class DownloadPDF {
         List<ContentDocumentLink> contentDocumentLinks = new List<ContentDocumentLink>();
         
         for (Database.UpsertResult result : results){
-            System.debug(result.isSuccess());
             if(result.isSuccess()){
                 contentVersionsIds.add(result.getId());
-                System.debug(contentVersionsIds);
             }
         }
         
