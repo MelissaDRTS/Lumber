@@ -141,6 +141,14 @@
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="OvernightAttachmentQueryEmailController" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="OvernightAttachmentQueryEmailControllerTest" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="ParsingHelper" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
