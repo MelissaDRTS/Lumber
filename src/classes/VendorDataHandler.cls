@@ -254,7 +254,7 @@ public with sharing class VendorDataHandler {
         vendor.Phone = '';
     }
 
-    //@Future
+
     private static void createOrUpdateContacts(Set<String> vendorNumbers) {
         List<Account> vendorAccounts = [
                 SELECT Id, Name, VendorNumber__c, Street__c, City__c, State__c, Country__c, Zip__c, Phone, EmailAddress__c, Status__c
@@ -269,10 +269,11 @@ public with sharing class VendorDataHandler {
         ];
 
         List<Contact> vendorContacts = new List<Contact>();
+        RecordType rt = [SELECT Id FROM RecordType WHERE Name = :CONTACT_RECORDTYPE LIMIT 1];
         for (Account vendor : vendorAccounts) {
             Contact contact = findOrCreateContact(vendor.VendorNumber__c, existingContacts);
 
-            copyDataToContact(vendor, contact);
+            copyDataToContact(vendor, contact, rt);
             vendorContacts.add(contact);
         }
 
@@ -288,7 +289,7 @@ public with sharing class VendorDataHandler {
     }
 
 
-    private static void copyDataToContact(Account vendorAccount, Contact vendorContact) {
+    private static void copyDataToContact(Account vendorAccount, Contact vendorContact, RecordType recordId) {
 
 
 
@@ -307,7 +308,7 @@ public with sharing class VendorDataHandler {
         vendorContact.Email = vendorAccount.EmailAddress__c;
 
         vendorContact.Status__c = vendorAccount.Status__c;
-        vendorContact.RecordType = [SELECT Id FROM RecordType WHERE Name = :CONTACT_RECORDTYPE];
+        vendorContact.RecordType = recordId;
     }
 
 

@@ -12,9 +12,13 @@ global class AttachmentQueryEmailController implements Schedulable {
 
         List<ContentDocumentLink> newDocuments = getContentDocumentLinks();
 
-        List<String> getServiceNumbers = getServiceNumbers(newDocuments);
+        Map<String, List<String>> mapSRData = srMap(newDocuments);
 
-        String emailBody = createEmailBody(getServiceNumbers);
+       //List<String> getServiceNumbers = getServiceNumbers(newDocuments);
+
+        //String emailBody = createEmailBody(getServiceNumbers);
+
+        String emailBody = createReportEmailBody(mapSRData);
 
         Messaging.SendEmailResult[] sendEmailResults = composeEmail(listOfString, emailBody);
 
@@ -92,39 +96,88 @@ global class AttachmentQueryEmailController implements Schedulable {
         ];
     }
 
-    public List<String> getServiceNumbers(List<ContentDocumentLink> contentDocumentLinks) {
+//    public List<String> getServiceNumbers(List<ContentDocumentLink> contentDocumentLinks) {
+//
+//        Set<Id> srIds = new Set<Id>();
+//
+//        Map<Id, List<String>> srDocTitles = new Map<Id, List<String>>();
+//        List<String> srNumbers = new List<String>();
+//
+//        for(ContentDocumentLink entity : contentDocumentLinks){
+//            srIds.add(entity.LinkedEntityId);
+//        }
+//
+//        List<Service_Request__c> srList = [SELECT Id, ServiceRequestNumber__c FROM Service_Request__c WHERE Id IN :srIds];
+//
+//
+//        for(Service_Request__c sr : srList){
+//            String srn = sr.ServiceRequestNumber__c;
+//            srNumbers.add(srn);
+//        }
+//
+//        return srNumbers;
+//
+//    }
 
+    public Map<String, List<String>> SrMap(List<ContentDocumentLink> contentDocumentLinks) {
         Set<Id> srIds = new Set<Id>();
-        List<String> srNumbers = new List<String>();
+        Map<String, List<String>> srNumbersMap = new Map<String, List<String>>();
 
         for(ContentDocumentLink entity : contentDocumentLinks){
             srIds.add(entity.LinkedEntityId);
         }
-
+        // Map
         List<Service_Request__c> srList = [SELECT Id, ServiceRequestNumber__c FROM Service_Request__c WHERE Id IN :srIds];
+        Map<Id, Service_Request__c> m = new Map<Id, Service_Request__c>(srList);
 
-
-        for(Service_Request__c sr : srList){
-            String srn = sr.ServiceRequestNumber__c;
-            srNumbers.add(srn);
+       for(Service_Request__c sr : srList){
+           List<String> titles = new List<String>();
+           for(ContentDocumentLink cdl : contentDocumentLinks){
+               if(cdl.LinkedEntityId == sr.Id){
+                  titles.add(cdl.ContentDocument.Title);
+               }
+           }
+           srNumbersMap.put(sr.ServiceRequestNumber__c, titles);
         }
 
-        return srNumbers;
+        return srNumbersMap;
 
     }
 
-    public String createEmailBody (List<String> srn ) {
-        String result = '\n';
 
-        if (srn.size() == 0) {
+//    public String createEmailBody (List<String> srn ) {
+//        String result = '\n';
+//
+//        if (srn.size() == 0) {
+//            result = 'No Service Requests were updated during this time frame.';
+//        } else {
+//            result = 'The following Service Requests have been updated: \n';
+//            for (String sr : srn) {
+//                result = result + sr + '\n';
+//            }
+//        }
+//            return result;
+//    }
+
+    public String createReportEmailBody(Map<String, List<String>> srMap){
+        String result = '\n';
+        Set<String> srNumbersStrings = new Set<String>();
+        srNumbersStrings = srMap.keySet();
+        if (srMap.size() == 0){
             result = 'No Service Requests were updated during this time frame.';
         } else {
             result = 'The following Service Requests have been updated: \n';
-            for (String sr : srn) {
-                result = result + sr + '\n';
+            for (String srNumber : srNumbersStrings){
+                List<String> titles = srMap.get(srNumber);
+                result = '\n' + result + srNumber + '\n';
+                for (String title : titles){
+                    result = result + '\t' + title + '\n';
             }
+
+            }
+
         }
-            return result;
+        return result;
     }
 
 }

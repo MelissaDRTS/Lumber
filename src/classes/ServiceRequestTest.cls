@@ -338,7 +338,7 @@ private class ServiceRequestTest {
         }
         contentNotes = [SELECT Id FROM ContentNote WHERE Id IN :docIds];
         System.assertNotEquals(null, contentNotes);
-        System.assertEquals(4, contentNotes.size());
+        System.assertEquals(3, contentNotes.size());
 
 
     }

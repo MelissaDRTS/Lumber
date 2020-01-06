@@ -74,6 +74,7 @@ global without sharing class ServiceRequest {
         webService String Email;
 
         webservice String Phone;
+        webService String MobilePhone;
 
         public Boolean isValid() {
             return !String.isBlank(CustomerNumber) &&

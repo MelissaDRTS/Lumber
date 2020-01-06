@@ -34,7 +34,7 @@ global class OvernightAttachmentQueryEmailController implements Schedulable {
         Integer minutes = dt.minute();
 
         mail.setToAddresses(emailList);
-        mail.setSubject('Service Requests Attachment Report for ' + hours + ':00');
+        mail.setSubject('Overnight Service Requests Attachment Report for ' + hours + ':00');
         mail.setPlainTextBody(emailBody);
 
 

@@ -159,11 +159,16 @@ public with sharing class ServiceRequestHandler {
 
         private List<ContentNote> insertNewNotes(List<ServiceRequest.Note> srNotes) {
             List<ContentNote> newNotes = new List<ContentNote>();
+
             for (ServiceRequest.Note srNote : srNotes) {
+                String noteText = parseNoteText(srNote.noteText);
+
+
                 ContentNote newNote = new ContentNote(
-                        //Title = 'Note: ' + srNote.noteDate + ' : ' + srNote.noteTime,
+                       // Title = 'Note: ' + srNote.noteDate + ' : ' + srNote.noteTime,
                         Title = 'Service Request Note',
-                        Content = Blob.valueOf(srNote.noteText.escapeHtml4())
+                       // Content = Blob.valueOf(srNote.noteText.escapeHtml4())\
+                        Content = Blob.valueOf(noteText)
                 );
 
                 newNotes.add(newNote);
@@ -172,11 +177,21 @@ public with sharing class ServiceRequestHandler {
             return newNotes;
         }
 
+        private String parseNoteText(String noteText){
+            List<String> noteStrings = noteText.split('\\+');
+            String newNote ='';
+
+            for (String noteString : noteStrings){
+                newNote = newNote + '<br>' + noteString + '</br>' ;
+            }
+            return newNote;
+        }
+
         private void deleteOldNotes(Service_Request__c serviceRequest) {
             List<ContentNote> allNotes = [SELECT Id, Title FROM ContentNote WHERE Id IN :getDocumentIds(serviceRequest)];
             List<ContentNote> oldNotes = new List<ContentNote>();
             for (ContentNote note : allNotes) {
-                if (!String.isBlank(note.Title) && note.Title.startsWith('Note: ')) {
+                if (!String.isBlank(note.Title) && note.Title.startsWith('Service Request Note')) {
                     oldNotes.add(note);
                 }
             }
@@ -293,6 +308,7 @@ public with sharing class ServiceRequestHandler {
             customer.MailingCountry = customerInfo.Country;
             customer.MailingPostalCode = customerInfo.ZipCode;
             customer.Phone = customerInfo.Phone;
+            customer.MobilePhone = customerInfo.MobilePhone;
             customer.Email = customerInfo.Email;
 
             // Handle parse the name (Assume that the name is coming as a single field, splits it based on white space)

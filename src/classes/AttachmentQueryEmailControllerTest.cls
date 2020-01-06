@@ -34,13 +34,13 @@ private class AttachmentQueryEmailControllerTest {
         insert cdl;
 
 
-        String jobId = System.schedule('testBasicScheduledApex','0 0 0 3 9 ? 2122',new AttachmentQueryEmailController());
+        String jobId = System.schedule('testBasicScheduledApex','0 0 0 3 9 ? 2025',new AttachmentQueryEmailController());
 
         CronTrigger ct = [SELECT Id, CronExpression, TimesTriggered, NextFireTime FROM CronTrigger WHERE id =:jobId];
 
-        System.assertEquals('0 0 0 3 9 ? 2022', ct.CronExpression);
+        System.assertEquals('0 0 0 3 9 ? 2025', ct.CronExpression);
         System.assertEquals(0, ct.TimesTriggered);
-        System.assertEquals('2022-09-03 00:00:00', String.valueOf(ct.NextFireTime));
+        System.assertEquals('2025-09-03 00:00:00', String.valueOf(ct.NextFireTime));
 
         Test.stopTest();
 
